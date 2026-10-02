@@ -1,0 +1,418 @@
+/* ========================================================
+   AUTOVYNE — EXPERIENCES REVIEW SLIDER & RATINGS LAYOUT
+   Exact Figma Implementation:
+     - Desktop Frame 32 (Node 231:754: x: 60, y: 632, w: 1314, h: 177)
+     - Desktop Frame 33 (Node 231:774: x: 59, y: 832, w: 1316, h: 38)
+     - Mobile Frame 38 (Node 234:930: y: 551, h: 157)
+     - Mobile Frame 39 (Node 234:991: x: 74, y: 717, w: 262, h: 27)
+   ======================================================== */
+
+.reviewsSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* ========================================================
+   DESKTOP VIEW (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Frame 32: x: 60px, y: 632px, w: 1314px, h: 177px */
+.reviewViewportDesktop {
+  position: absolute;
+  left: 60px;
+  top: 632px;
+  width: 1314px;
+  height: 177px;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.trackDesktop {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  will-change: transform;
+}
+
+/* Card: w: 250px, h: 177px, r: 15px */
+.cardDesktop {
+  width: 250px;
+  height: 177px;
+  flex-shrink: 0;
+  position: relative;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  user-select: none;
+}
+
+/* Top decorative quote mark */
+.quoteMarkDesktop {
+  position: absolute;
+  left: 19px;
+  top: 10px;
+  width: 18px;
+  height: 43px;
+  font-family: var(--font-port-lligat);
+  font-size: 40px;
+  line-height: 42.84px;
+  color: #CACACA;
+  pointer-events: none;
+}
+
+/* Review text block */
+.reviewTextDesktop {
+  position: absolute;
+  left: 41px;
+  top: 17px;
+  width: 192px;
+  height: 84px;
+  font-family: var(--font-port-lligat);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #CACACA;
+  white-space: pre-line;
+  word-break: break-word;
+  pointer-events: none;
+}
+
+/* Profile Picture */
+.avatarContainerDesktop {
+  position: absolute;
+  left: 19px;
+  top: 115px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.avatarImageDesktop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* User Info */
+.userInfoDesktop {
+  position: absolute;
+  left: 77px;
+  top: 115px;
+  display: flex;
+  flex-direction: column;
+}
+
+.userNameDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 18px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+}
+
+.userLocationDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #979897;
+  margin: -2px 0 0 0;
+  padding: 0;
+}
+
+.starsRowDesktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1px;
+  margin-top: 2px;
+}
+
+.starSvg {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+/* Frame 33 Controls: x: 59px, y: 832px, w: 1316px, h: 38px */
+.controlsDesktop {
+  position: absolute;
+  left: 59px;
+  top: 832px;
+  width: 1316px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+}
+
+.sliderButtonDesktop {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.sliderButtonDesktop:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.04);
+}
+
+.sliderButtonDesktop:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.chevronIconDesktop {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.dividerLineDesktop {
+  flex: 1;
+  height: 1px;
+  background-color: #242424;
+  margin: 0 34px;
+  transform-origin: center center;
+}
+
+/* ========================================================
+   MOBILE VIEW (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+
+  .mobileWrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* Frame 38: top: 551px, h: 157px */
+  .reviewViewportMobile {
+    position: absolute;
+    left: 0;
+    top: 551px;
+    width: 100%;
+    height: 157px;
+    overflow: hidden;
+    pointer-events: auto;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+  }
+
+  .reviewViewportMobile:active {
+    cursor: grabbing;
+  }
+
+  .trackMobile {
+    display: flex;
+    flex-direction: row;
+    gap: 27px;
+    will-change: transform;
+  }
+
+  /* Card: w: 233px, h: 157px, r: 15px */
+  .cardMobile {
+    width: 233px;
+    height: 157px;
+    flex-shrink: 0;
+    position: relative;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(202, 202, 202, 0.2);
+    border-radius: 15px;
+    user-select: none;
+  }
+
+  .quoteMarkMobile {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 16px;
+    height: 37px;
+    font-family: var(--font-port-lligat);
+    font-size: 35px;
+    line-height: 37.5px;
+    color: #CACACA;
+    pointer-events: none;
+  }
+
+  .reviewTextMobile {
+    position: absolute;
+    left: 39px;
+    top: 17px;
+    width: 164px;
+    height: 72px;
+    font-family: var(--font-port-lligat);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #CACACA;
+    white-space: pre-line;
+    word-break: break-word;
+    pointer-events: none;
+  }
+
+  .avatarContainerMobile {
+    position: absolute;
+    left: 19px;
+    top: 104px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .avatarImageMobile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .userInfoMobile {
+    position: absolute;
+    left: 70px;
+    top: 104px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .userNameMobile {
+    font-family: var(--font-poppins);
+    font-weight: 800;
+    font-size: 11px;
+    line-height: 16.5px;
+    color: #CACACA;
+    margin: 0;
+    padding: 0;
+  }
+
+  .userLocationMobile {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    color: #979897;
+    margin: -1px 0 0 0;
+    padding: 0;
+  }
+
+  .starsRowMobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1px;
+    margin-top: 2px;
+  }
+
+  /* Frame 39 Controls: x: 74px, y: 717px, w: 262px, h: 27px */
+  .controlsMobile {
+    position: absolute;
+    left: 64px;
+    top: 717px;
+    width: 262px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: auto;
+  }
+
+  .sliderButtonMobile {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(202, 202, 202, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    outline: none;
+  }
+
+  .sliderButtonMobile:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .chevronIconMobile {
+    width: 13px;
+    height: 13px;
+    display: block;
+  }
+
+  .dividerLineMobile {
+    flex: 1;
+    height: 1px;
+    background-color: #242424;
+    margin: 0 9px;
+    transform-origin: center center;
+  }
+}

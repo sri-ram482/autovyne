@@ -1,0 +1,214 @@
+/* ========================================================
+   AUTOVYNE — SPECIFICATIONS (STAGE 13)
+   Exact Figma Specifications Desktop (188:114) & Mobile (188:460)
+   Strictly: Vehicle Video + Vehicle Brand + Vehicle Model + Back Link
+   No page scrollbars. Single viewport fit.
+   ======================================================== */
+
+.specificationsRoot {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #08090B;
+}
+
+.stageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stageInner {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .stageInner {
+    max-width: 390px;
+  }
+}
+
+/* ========================================================
+   BACK TO FLEET BUTTON
+   Desktop: Figma Frame 24 (left: 36px, top: 115px, width: 132px, height: 30px)
+   Mobile:  Figma Frame 29 (left: 20px, top: 179px, width: 67px, height: 12px)
+   ======================================================== */
+.backButton {
+  position: absolute;
+  left: 36px;
+  top: 115px;
+  width: 132px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 30;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateX(-3px);
+}
+
+.backArrow {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.backText {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #979897;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.backButton:hover .backText {
+  color: #CACACA;
+}
+
+@media (max-width: 767px) {
+  .backButton {
+    left: 20px;
+    top: 179px;
+    width: 67px;
+    height: 12px;
+    gap: 4px;
+  }
+
+  .backArrow {
+    width: 12px;
+    height: 12px;
+  }
+
+  .backText {
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+
+/* ========================================================
+   TYPOGRAPHY LAYER (BEHIND VIDEO: z-index: 2)
+   Brand: Poppins Extra Bold (800) in #CACACA
+   Model: Poppins Extra Bold (800) in #5F605F
+   ======================================================== */
+.typographyLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.desktopTypography {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mobileTypography {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .desktopTypography {
+    display: none;
+  }
+  .mobileTypography {
+    display: block;
+  }
+}
+
+.brandText {
+  position: absolute;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.modelText {
+  position: absolute;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  color: #5F605F;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+/* ========================================================
+   VIDEO CONTAINER & ELEMENT (OVER TYPOGRAPHY: z-index: 5)
+   Desktop: Figma 193:2 (left: 272px, top: 174px, width: 1006px, height: 566px)
+   Mobile:  Figma 219:303 (left: 10px, top: 363px, width: 370px, height: 208px)
+   ======================================================== */
+.videoContainer {
+  position: absolute;
+  left: 272px;
+  top: 174px;
+  width: 1006px;
+  height: 566px;
+  z-index: 5;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 767px) {
+  .videoContainer {
+    left: 10px;
+    top: 363px;
+    width: 370px;
+    height: 208px;
+  }
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  background: transparent;
+}

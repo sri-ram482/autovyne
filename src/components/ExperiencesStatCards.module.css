@@ -1,0 +1,302 @@
+/* ========================================================
+   AUTOVYNE — EXPERIENCES PAGE 3 STATISTIC GLASS CARDS
+   Exact Figma Implementation:
+     - Desktop Frame 31 (Node 225:691: x: 940, y: 153, w: 434, h: 151)
+     - Mobile Frame 37 (Node 234:914: x: 25, y: 367, w: 333, h: 73)
+   ======================================================== */
+
+.statCardsSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 25; /* Above car (z-index: 10), matching Figma layer order */
+}
+
+/* ========================================================
+   DESKTOP CONTAINER (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Frame 31: x: 940px, top: 153px, w: 434px, gap: 28px */
+.statCardsContainerDesktop {
+  position: absolute;
+  left: 940px;
+  top: 153px;
+  width: 434px;
+  height: 151px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  pointer-events: auto;
+}
+
+/* Desktop Glass Card (w: 126px, h: 151px, r: 15px) */
+.cardDesktop {
+  position: relative;
+  width: 126px;
+  height: 151px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8px 16px;
+  box-sizing: border-box;
+  user-select: none;
+  will-change: transform, opacity;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardDesktop:hover {
+  transform: translateY(-2px);
+  border-color: rgba(202, 202, 202, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Values (Desktop) */
+.valueRatingDesktop {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+}
+
+.ratingNumberDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+}
+
+.ratingUnitDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+  margin-left: 1px;
+}
+
+.valueCustomersDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+  text-align: center;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.valueRecommendedDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+  text-align: center;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Labels (Desktop) */
+.labelDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #C1C1C1;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  white-space: pre-line;
+}
+
+/* Icons (Desktop: 30x30, #FFBF00) */
+.iconDesktop {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* ========================================================
+   MOBILE CONTAINER (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Frame 37: x: 25px, top: 367px, w: 333px, gap: 9px */
+.statCardsContainerMobile {
+  position: absolute;
+  left: 25px;
+  top: 367px;
+  width: 333px;
+  height: 73px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  pointer-events: auto;
+}
+
+/* Mobile Glass Card (w: 105px, h: 73px, r: 7px) */
+.cardMobile {
+  position: relative;
+  width: 105px;
+  height: 73px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 7px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 4px 7px;
+  box-sizing: border-box;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+/* Values (Mobile) */
+.valueRatingMobile {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.ratingNumberMobile {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+}
+
+.ratingUnitMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+  margin-left: 1px;
+}
+
+.valueCustomersMobile {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+  text-align: center;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.valueRecommendedMobile {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1;
+  color: #CACACA;
+  letter-spacing: 0;
+  text-align: center;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Labels (Mobile) */
+.labelMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  color: #C1C1C1;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Icons (Mobile: 15x15, #FFBF00) */
+.iconMobile {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .statCardsSection {
+    z-index: 8; /* Strictly behind car (z-index: 10) on mobile as requested */
+  }
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}
+

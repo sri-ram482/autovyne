@@ -1,0 +1,502 @@
+/* ========================================================
+   AUTOVYNE — CONTACT PAGE 4 GLASS-MORPHISM CONTACT CARDS
+   & 2 DECORATIVE HORIZONTAL LINES WITH ENDPOINT DOTS
+   Figma Reference:
+     - Desktop Frame 31 (Node 238:1057: x: 880, y: 160, w: 498, h: 94)
+       Call Card (Node 238:1428): x: 880, y: 160, w: 146, h: 94
+       Email Card (Node 238:1416): x: 1054, y: 160, w: 146, h: 94
+       Right Line + Dot (Node 238:1437): x: 1228, y: 203, w: 150, h: 8
+     - Desktop Frame 40 (Node 238:1434: x: 796, y: 273, w: 498, h: 94)
+       Left Line + Dot (Node 239:1465): x: 796, y: 316, w: 150, h: 8
+       WhatsApp Card (Node 238:1058): x: 974, y: 273, w: 146, h: 94
+       Visit Us Card (Node 238:1422): x: 1148, y: 273, w: 146, h: 94
+     - Mobile Frame 49 (Node 244:1555: x: 31, y: 338, w: 275, h: 40)
+       Call Card: x: 31, y: 338, w: 96, h: 40
+       Email Card: x: 135, y: 338, w: 96, h: 40
+       Right Line + Dot: x: 239, y: 354, w: 67, h: 8
+     - Mobile Frame 50 (Node 244:1571: x: 38, y: 387, w: 275, h: 44)
+       Left Line + Dot: x: 38, y: 405, w: 67, h: 8
+       WhatsApp Card: x: 113, y: 387, w: 96, h: 44
+       Visit Us Card: x: 217, y: 387, w: 96, h: 44
+   ======================================================== */
+
+.contactCardsSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 8; /* Behind car (z: 10) */
+}
+
+/* ========================================================
+   DESKTOP CONTAINER (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Base Glass Card (Desktop) */
+.glassCardDesktop {
+  position: absolute;
+  width: 146px;
+  height: 94px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.glassCardDesktop:hover {
+  transform: translateY(-2px);
+  border-color: rgba(202, 202, 202, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* 1. Call Box Desktop (Node 238:1428: x: 880, y: 160) */
+.callCardDesktop {
+  left: 880px;
+  top: 160px;
+}
+
+/* 2. Email Box Desktop (Node 238:1416: x: 1054, y: 160) */
+.emailCardDesktop {
+  left: 1054px;
+  top: 160px;
+}
+
+/* 3. WhatsApp Box Desktop (Node 238:1058: x: 974, y: 273) */
+.whatsappCardDesktop {
+  left: 974px;
+  top: 273px;
+}
+
+/* 4. Visit Us Box Desktop (Node 238:1422: x: 1148, y: 273) */
+.visitCardDesktop {
+  left: 1148px;
+  top: 273px;
+}
+
+/* Icon (Desktop) */
+.cardIconDesktop {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  pointer-events: none;
+  color: #FFBF00;
+}
+
+.callIconDesktop {
+  left: 10px;
+  top: 31px;
+}
+
+.emailIconDesktop {
+  left: 8px;
+  top: 32px;
+}
+
+.whatsappIconDesktop {
+  left: 10px;
+  top: 32px;
+}
+
+.visitIconDesktop {
+  left: 10px;
+  top: 30px;
+}
+
+/* Text Content Wrapper (Desktop) */
+.cardContentDesktop {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.callContentDesktop {
+  left: 48px;
+  top: 22px;
+}
+
+.emailContentDesktop {
+  left: 44px;
+  top: 18px;
+}
+
+.whatsappContentDesktop {
+  left: 48px;
+  top: 23px;
+}
+
+.visitContentDesktop {
+  left: 48px;
+  top: 12px;
+}
+
+/* Card Label (Desktop): Poppins Regular #C1C1C1 */
+.cardLabelDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0;
+  color: #C1C1C1;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Card Primary Value (Desktop): Poppins Extra Bold #CACACA */
+.cardValueDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 2px 0 0 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Card Subtext (Desktop): Poppins Regular #C1C1C1 */
+.cardSubtextDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0;
+  color: #C1C1C1;
+  margin: 2px 0 0 0;
+  padding: 0;
+  white-space: pre-line;
+}
+
+/* ========================================================
+   DESKTOP DECORATIVE LINES & ENDPOINT DOTS
+   ======================================================== */
+/* Line 1 (Right): Node 238:1437: x: 1228, y: 203, w: 150, h: 8. Dot at RIGHT END */
+.rightLineGroupDesktop {
+  position: absolute;
+  left: 1228px;
+  top: 203px;
+  width: 150px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.rightLineDesktop {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 142px;
+  height: 1px;
+  background-color: #3A3A3A;
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+
+.rightDotDesktop {
+  position: absolute;
+  left: 142px;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3A3A3A;
+  will-change: transform, opacity;
+}
+
+/* Line 2 (Left): Node 239:1465: x: 796, y: 316, w: 150, h: 8. Dot at LEFT END */
+.leftLineGroupDesktop {
+  position: absolute;
+  left: 796px;
+  top: 316px;
+  width: 150px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.leftDotDesktop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3A3A3A;
+  will-change: transform, opacity;
+}
+
+.leftLineDesktop {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 142px;
+  height: 1px;
+  background-color: #3A3A3A;
+  transform-origin: right center;
+  will-change: transform, opacity;
+}
+
+/* ========================================================
+   MOBILE CONTAINER (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Base Glass Card (Mobile) */
+.glassCardMobile {
+  position: absolute;
+  width: 96px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+/* 1. Call Box Mobile: Node 244:1556: x: 31, y: 338, w: 96, h: 40 */
+.callCardMobile {
+  left: 31px;
+  top: 338px;
+}
+
+/* 2. Email Box Mobile: Node 244:1562: x: 135, y: 338, w: 96, h: 40 */
+.emailCardMobile {
+  left: 135px;
+  top: 338px;
+}
+
+/* 3. WhatsApp Box Mobile: Node 244:1575: x: 113, y: 387, w: 96, h: 44 */
+.whatsappCardMobile {
+  left: 113px;
+  top: 387px;
+  height: 44px;
+}
+
+/* 4. Visit Us Box Mobile: Node 244:1581: x: 217, y: 387, w: 96, h: 44 */
+.visitCardMobile {
+  left: 217px;
+  top: 387px;
+  height: 44px;
+}
+
+/* Icon (Mobile) */
+.cardIconMobile {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  pointer-events: none;
+  color: #FFBF00;
+}
+
+.callIconMobile {
+  left: 7px;
+  top: 13px;
+}
+
+.emailIconMobile {
+  left: 8px;
+  top: 11px;
+}
+
+.whatsappIconMobile {
+  left: 7px;
+  top: 15px;
+}
+
+.visitIconMobile {
+  left: 10px;
+  top: 15px;
+}
+
+/* Text Content Wrapper (Mobile) */
+.cardContentMobile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.callContentMobile {
+  left: 27px;
+  top: 5px;
+}
+
+.emailContentMobile {
+  left: 27px;
+  top: 3px;
+}
+
+.whatsappContentMobile {
+  left: 27px;
+  top: 7px;
+}
+
+.visitContentMobile {
+  left: 32px;
+  top: 4px;
+}
+
+/* Card Label (Mobile) */
+.cardLabelMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  letter-spacing: 0;
+  color: #C1C1C1;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Card Primary Value (Mobile) */
+.cardValueMobile {
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 7px;
+  line-height: 10.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Card Subtext (Mobile) */
+.cardSubtextMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 7.5px;
+  letter-spacing: 0;
+  color: #C1C1C1;
+  margin: 0;
+  padding: 0;
+  white-space: pre-line;
+}
+
+/* ========================================================
+   MOBILE DECORATIVE LINES & ENDPOINT DOTS
+   ======================================================== */
+/* Line 1 (Right): Node 244:1568: x: 239, y: 354, w: 67, h: 8. Dot at RIGHT END */
+.rightLineGroupMobile {
+  position: absolute;
+  left: 239px;
+  top: 354px;
+  width: 67px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.rightLineMobile {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 59px;
+  height: 1px;
+  background-color: #3A3A3A;
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+
+.rightDotMobile {
+  position: absolute;
+  left: 59px;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3A3A3A;
+  will-change: transform, opacity;
+}
+
+/* Line 2 (Left): Node 244:1572: x: 38, y: 405, w: 67, h: 8. Dot at LEFT END */
+.leftLineGroupMobile {
+  position: absolute;
+  left: 38px;
+  top: 405px;
+  width: 67px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.leftDotMobile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3A3A3A;
+  will-change: transform, opacity;
+}
+
+.leftLineMobile {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 59px;
+  height: 1px;
+  background-color: #3A3A3A;
+  transform-origin: right center;
+  will-change: transform, opacity;
+}
+
+/* ========================================================
+   RESPONSIVE DISPLAY TOGGLE
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

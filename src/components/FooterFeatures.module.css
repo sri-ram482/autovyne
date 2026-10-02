@@ -1,0 +1,245 @@
+/* ========================================================
+   AUTOVYNE — FOOTER FEATURES (STAGE 6)
+   Exact Figma Specifications for Desktop and Mobile
+   ======================================================== */
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 21;
+  overflow: hidden;
+}
+
+/* ========================================================
+   DESKTOP LAYOUT (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.footerFeaturesDesktop {
+  position: absolute;
+  left: 0;
+  top: 790px;
+  width: 1440px;
+  height: 90px;
+  pointer-events: auto;
+}
+
+/* Feature Item Group Desktop */
+.featureGroupDesktop {
+  position: absolute;
+  top: 0;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+/* Exact desktop group positions and widths from Figma */
+.groupPremiumFleetDesktop {
+  left: 78px;
+  width: 298px;
+}
+
+.groupSecureBookingDesktop {
+  left: 436px;
+  width: 271px;
+}
+
+.groupSupportDesktop {
+  left: 767px;
+  width: 262px;
+}
+
+.groupLocationsDesktop {
+  left: 1089px;
+  width: 269px;
+}
+
+/* Desktop Icon (60x90 Figma source artwork) */
+.featureIconDesktop {
+  width: 60px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Desktop Text Block */
+.textContainerDesktop {
+  margin-left: 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+}
+
+.featureTitleDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #909090;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.featureSubtextDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22.5px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Desktop Divider Line (1px width, 55px height, #D9D9D9) */
+.dividerDesktop {
+  position: absolute;
+  right: 0;
+  top: 21px;
+  width: 1px;
+  height: 55px;
+  background-color: #D9D9D9;
+  pointer-events: none;
+  transform-origin: top center;
+}
+
+/* ========================================================
+   MOBILE LAYOUT (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.footerFeaturesMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Mobile Feature Item - Center-aligned vertical stack */
+.featureItemMobile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+  pointer-events: auto;
+}
+
+/* Exact Figma coordinates and dimensions for Mobile */
+.itemPremiumFleetMobile {
+  left: 264px;
+  top: 538px;
+  width: 74px;
+  height: 40px;
+}
+
+.itemSecureBookingMobile {
+  left: 294.5px;
+  top: 588px;
+  width: 63px;
+  height: 39px;
+}
+
+.itemSupportMobile {
+  left: 278px;
+  top: 637px;
+  width: 60px;
+  height: 40px;
+}
+
+.itemLocationsMobile {
+  left: 294px;
+  top: 687px;
+  width: 73px;
+  height: 39px;
+}
+
+/* Mobile Icon */
+.featureIconMobile {
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.iconDiamondMobile {
+  width: 15px;
+  height: 23px;
+}
+
+.iconShieldMobile {
+  width: 15px;
+  height: 22px;
+}
+
+.iconHeadsetMobile {
+  width: 15px;
+  height: 23px;
+}
+
+.iconMarkerMobile {
+  width: 15px;
+  height: 22px;
+}
+
+/* Mobile Text Typography */
+.featureTitleMobile {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 0;
+  color: #909090;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.featureSubtextMobile {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 6px;
+  line-height: 9px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Responsive display toggle */
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

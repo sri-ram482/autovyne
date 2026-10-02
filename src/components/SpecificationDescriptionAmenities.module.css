@@ -1,0 +1,259 @@
+/* ========================================================
+   AUTOVYNE — SPECIFICATIONS CAR DESCRIPTION & AMENITIES
+   Desktop:
+     - Car Description (Figma 188:114 node 203:59): left: 545px, top: 668px, 459x21px
+     - Divider Line (Figma 188:114 node 204:60): left: 545px, top: 688px, 459x1px
+     - Amenities Row 1 (Figma 188:114 node 205:89): left: 585px, top: 708px, 379x31px
+     - Amenities Row 2 (Figma 188:114 node 205:90): left: 651px, top: 761px, 266x31px
+   Mobile:
+     - Car Description & Line: left: 36.5px, top: 508px, 317x16px; line at top: 524px
+     - Amenities (Figma 188:460 node 219:378): left: 36.5px, top: 532px, 317x26px
+     - Side Badge (Figma 188:460 node 219:357): right: 12px, top: 622px
+   ======================================================== */
+
+/* ========================================================
+   DESKTOP STYLES (>= 768px)
+   ======================================================== */
+.desktopContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 900px;
+  pointer-events: none;
+  z-index: 22;
+  user-select: none;
+}
+
+/* 1. Description Text Row */
+.desktopDescriptionRow {
+  position: absolute;
+  left: 545px;
+  top: 668px;
+  width: 459px;
+  height: 21px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.descriptionWordDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.descriptionSeparatorDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #CACACA;
+  padding: 0 4px;
+}
+
+/* 2. Divider Line */
+.desktopDividerLine {
+  position: absolute;
+  left: 545px;
+  top: 688px;
+  width: 459px;
+  height: 1px;
+  background-color: #CACACA;
+  transform-origin: center center;
+}
+
+/* 3. Amenities Row 1 (Seats, Luggage, Doors) */
+.desktopAmenitiesRow1 {
+  position: absolute;
+  left: 585px;
+  top: 708px;
+  width: 379px;
+  height: 31px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* 4. Amenities Row 2 (0-60 MPH, Horse Power) */
+.desktopAmenitiesRow2 {
+  position: absolute;
+  left: 651px;
+  top: 761px;
+  width: 266px;
+  height: 31px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* Individual Amenity Item (Desktop) */
+.amenityItemDesktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  will-change: transform;
+}
+
+.amenityIconDesktop {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.amenityTextColDesktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+.amenityValueDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 18px;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.amenityLabelDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  color: #979897;
+  white-space: nowrap;
+}
+
+/* ========================================================
+   MOBILE STYLES (< 768px)
+   ======================================================== */
+.mobileContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 390px;
+  height: 844px;
+  pointer-events: none;
+  z-index: 22;
+  user-select: none;
+}
+
+/* Mobile Amenities Row (Figma Frame 30: 317x23px, left 36.5px, top 539px) */
+.mobileAmenitiesRow {
+  position: absolute;
+  left: 36.5px;
+  top: 539px;
+  width: 317px;
+  height: 23px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* Individual Amenity Item (Mobile) */
+.amenityItemMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  will-change: transform;
+}
+
+.amenityIconMobile {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.amenityTextColMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0px;
+}
+
+.amenityValueMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.amenityLabelMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  color: #979897;
+  white-space: nowrap;
+}
+
+/* Mobile Vertical Description (Figma node 219:357: left 354px, aligned center vertically with specification boxes 571px to 812px) */
+.mobileSideBadge {
+  position: absolute;
+  left: 354px;
+  top: 571px;
+  width: 12px;
+  height: 241px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 0.05em;
+  color: #979897;
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+  z-index: 20;
+}
+
+/* ========================================================
+   RESPONSIVE SWITCH
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopContainer {
+    display: block;
+  }
+  .mobileContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopContainer {
+    display: none;
+  }
+  .mobileContainer {
+    display: block;
+  }
+}

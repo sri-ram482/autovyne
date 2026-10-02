@@ -1,0 +1,386 @@
+/* ========================================================
+   AUTOVYNE — CONTACT PAGE TEXT & SOCIAL MEDIA ICONS
+   Figma Reference:
+     - Desktop (Figma 238:1017):
+       GET IN TOUCH: left: 493px, top: 186px, 297x27px (Node 238:1407)
+       CONTACT: left: 35px, top: 160px, 755x225px (Node 238:1024)
+       US: left: 36px, top: 304px, 134x150px (Node 238:1025)
+       Description: left: 186px, top: 343px, 292x78px (Node 238:1056)
+       Frame 4 (Social): left: 1122px, top: 804px, 258x90px (Node 238:1049)
+     - Mobile (Figma 238:1267):
+       GET IN TOUCH: left: 115px, top: 187px, 198x18px (Node 244:1554)
+       CONTACT: left: 21px, top: 185px, 292x87px (Node 244:1551)
+       US: left: 21px, top: 245px, 54x60px (Node 244:1552)
+       Description: left: 86px, top: 257px, 138x36px (Node 244:1553)
+       Frame 6 (Social): left: 24px, top: 261px, 181x90px (Node 238:1310)
+   ======================================================== */
+
+.contactTextSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5; /* Behind car (z: 10) for large text; interactive social is z: 20 */
+}
+
+/* ========================================================
+   DESKTOP CONTAINER (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. GET IN TOUCH (Node 238:1407: x: 493, y: 186, w: 297, h: 27) */
+.getInTouchDesktop {
+  position: absolute;
+  left: 493px;
+  top: 186px;
+  width: 297px;
+  height: 27px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 15.84px;
+  color: #4D4D4D;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 2. CONTACT Heading (Node 238:1024: x: 35, y: 160, w: 755, h: 225) */
+.contactHeadingDesktop {
+  position: absolute;
+  left: 35px;
+  top: 160px;
+  width: 755px;
+  height: 225px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 150px;
+  line-height: 225px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 3. US Heading (Node 238:1025: x: 36, y: 304, w: 134, h: 150) */
+.usHeadingDesktop {
+  position: absolute;
+  left: 36px;
+  top: 304px;
+  width: 134px;
+  height: 150px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 150px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 4. Contact Page Description (Node 238:1056: x: 186, y: 343, w: 292, h: 78) */
+.descDesktop {
+  position: absolute;
+  left: 186px;
+  top: 343px;
+  width: 292px;
+  height: 78px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25.5px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 5. FOLLOW THE JOURNEY & Social Frame (Desktop Frame 4, Node 238:1049: x: 1122, y: 804, w: 258, h: 90) */
+.socialFrameDesktop {
+  position: absolute;
+  left: 1122px;
+  top: 804px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.followJourneyDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 1.36px;
+  color: #979897;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 108px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.socialIconsDesktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 90px;
+}
+
+.socialLinkDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 90px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialLinkDesktop:hover {
+  opacity: 1 !important;
+  filter: brightness(1.25);
+}
+
+.socialIconDesktop {
+  width: 20px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ========================================================
+   MOBILE CONTAINER (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. GET IN TOUCH (Node 244:1554: x: 115, y: 187, w: 198, h: 18) */
+.getInTouchMobile {
+  position: absolute;
+  left: 115px;
+  top: 187px;
+  width: 198px;
+  height: 18px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 10.56px;
+  color: #4D4D4D;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 2. CONTACT Heading (Node 244:1551: x: 21, y: 185, w: 292, h: 87) */
+.contactHeadingMobile {
+  position: absolute;
+  left: 21px;
+  top: 185px;
+  width: 292px;
+  height: 87px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 58px;
+  line-height: 87px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 3. US Heading (Node 244:1552: x: 21, y: 245, w: 54, h: 60) */
+.usHeadingMobile {
+  position: absolute;
+  left: 21px;
+  top: 245px;
+  width: 54px;
+  height: 60px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 4. Contact Page Description (Node 244:1553: x: 86, y: 257, w: 138, h: 36) */
+.descMobile {
+  position: absolute;
+  left: 86px;
+  top: 257px;
+  width: 138px;
+  height: 36px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 5;
+}
+
+/* 5. FOLLOW THE JOURNEY & Social Frame (Mobile Frame 6, Node 238:1310: x: 24, y: 261, w: 181, h: 90) */
+.socialFrameMobile {
+  position: absolute;
+  left: 24px;
+  top: 261px;
+  width: 181px;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.followJourneyMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 6px;
+  line-height: 9px;
+  letter-spacing: 1.02px;
+  color: #979897;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 81px;
+  height: 9px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.socialIconsMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  height: 90px;
+}
+
+.socialLinkMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 90px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialLinkMobile:hover {
+  opacity: 1 !important;
+  filter: brightness(1.25);
+}
+
+.socialIconMobile {
+  width: 15px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ========================================================
+   RESPONSIVE DISPLAY TOGGLE
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

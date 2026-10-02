@@ -1,0 +1,252 @@
+/* ========================================================
+   AUTOVYNE — CHECKOUT SUCCESS STATE GLASS-MORPHISM BOX
+   Design System Reference:
+     - Glass appearance:
+       background: rgba(255, 255, 255, 0.1)
+       backdrop-filter: blur(20px)
+       border: 1px solid rgba(202, 202, 202, 0.2)
+       border-radius: 15px
+       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25)
+     - Desktop Canvas: 1440x900
+       Centering: left 450px, top 300px, width 540px, height 280px
+     - Mobile Canvas: 390x844
+       Centering: left 30px, top 280px, width 330px, height 240px
+   ======================================================== */
+
+.successSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* ========================================================
+   DESKTOP (>= 768px, 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.successBoxDesktop {
+  position: absolute;
+  left: 450px;
+  top: 300px;
+  width: 540px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 36px 32px;
+  gap: 16px;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.iconWrapperDesktop {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.tickSvg {
+  width: 26px;
+  height: 26px;
+}
+
+.titleDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.subtitleDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  max-width: 420px;
+}
+
+.actionBtnDesktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 24px;
+  margin-top: 4px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  color: #CACACA;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtnDesktop:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(202, 202, 202, 0.4);
+  color: #FFFFFF;
+}
+
+/* ========================================================
+   MOBILE (< 768px, 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.successBoxMobile {
+  position: absolute;
+  left: 30px;
+  top: 280px;
+  width: 330px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
+  gap: 12px;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.iconWrapperMobile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tickSvgMobile {
+  width: 20px;
+  height: 20px;
+}
+
+.titleMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.subtitleMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  max-width: 280px;
+}
+
+.actionBtnMobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 18px;
+  margin-top: 2px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  color: #CACACA;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtnMobile:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(202, 202, 202, 0.4);
+  color: #FFFFFF;
+}
+
+/* ========================================================
+   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

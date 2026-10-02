@@ -1,0 +1,259 @@
+/* ========================================================
+   AUTOVYNE — CONTACT PAGE OUR LOCATION & GET DIRECTIONS
+   Figma Reference:
+     - Desktop Frame 43 (Node 240:1475: x: 790, y: 617, w: 498, h: 152)
+       - Heading "Our Location" (Node 239:1464): x: 790, y: 617, w: 498, h: 30
+         Font: Poppins 800 (Extra Bold), 20px, line-height 30px, #CACACA
+       - Description (Node 239:1468): x: 790, y: 662, w: 498, h: 42
+         Text: "Find us at the Heart of New York. Visit our Showroom or pick up your Car\nfrom a convenient location."
+         Font: Poppins 400 (Regular), 14px, line-height 21px, #979897
+       - Button "Get Directions" (Node 239:1469): x: 790, y: 719, w: 253, h: 50, radius: 100px
+         Navigation icon (Node 240:1474): x: 815, y: 729, 30x30, #CACACA
+         Text "Get Directions" (Node 239:1471): x: 860, y: 729, 140x30, 20px, #CACACA
+
+     - Mobile Frame 52 (Node 244:1612: x: 98, y: 731, w: 254, h: 89)
+       - Heading "Our Location" (Node 244:1613): x: 98, y: 731, 12px 800 #CACACA, right-aligned
+       - Description: 7px 400 #979897, right-aligned
+       - Button "Get Directions" (Node 244:1615): x: 98, y: 770, 138x27, radius: 100px
+         Navigation icon: 15x15, Text: 10px 400 #CACACA
+   ======================================================== */
+
+.locationSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15; /* Interactive section above background and cards */
+}
+
+/* ========================================================
+   DESKTOP IMPLEMENTATION (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.locationContainerDesktop {
+  position: absolute;
+  left: 790px;
+  top: 617px;
+  width: 498px;
+  height: auto;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.headingDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+/* Description */
+.descriptionDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #979897;
+  margin: 15px 0 0 0;
+  padding: 0;
+  max-width: 498px;
+  letter-spacing: 0;
+  user-select: none;
+  white-space: pre-line;
+}
+
+/* Get Directions Button */
+.buttonDesktop {
+  display: inline-flex;
+  align-items: center;
+  width: 253px;
+  height: 50px;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding: 0 24px;
+  gap: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.buttonDesktop:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(202, 202, 202, 0.4);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.buttonDesktop:active {
+  transform: scale(0.99);
+}
+
+.buttonIconDesktop {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.buttonDesktop:hover .buttonIconDesktop {
+  transform: rotate(-10deg) scale(1.05);
+}
+
+.buttonTextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #CACACA;
+  white-space: nowrap;
+  user-select: none;
+}
+
+
+/* ========================================================
+   MOBILE IMPLEMENTATION (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.locationContainerMobile {
+  position: absolute;
+  left: 98px;
+  top: 731px;
+  width: 254px;
+  height: auto;
+  pointer-events: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Heading Mobile */
+.headingMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 18px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  user-select: none;
+  text-align: right;
+}
+
+/* Description Mobile */
+.descriptionMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  color: #979897;
+  margin: 0 0 4px 0;
+  padding: 0;
+  max-width: 254px;
+  letter-spacing: 0;
+  user-select: none;
+  text-align: right;
+  white-space: pre-line;
+}
+
+/* Get Directions Button Mobile */
+.buttonMobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: 138px;
+  height: 27px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding: 0 14px;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.buttonMobile:active {
+  transform: scale(0.98);
+}
+
+.buttonIconMobile {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.buttonTextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #CACACA;
+  white-space: nowrap;
+  user-select: none;
+}
+
+
+/* ========================================================
+   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

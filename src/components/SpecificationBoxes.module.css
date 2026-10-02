@@ -1,0 +1,886 @@
+/* ========================================================
+   AUTOVYNE — SPECIFICATION BOXES STYLES (STAGE 14)
+   Exact Figma Specifications Desktop (188:114) & Mobile (188:460)
+   Strictly: 9 Specification Boxes on Desktop, 8 Boxes on Mobile
+   (Range/Fuel box removed on mobile per user specification)
+   All texts centered and sizes adjusted to stay strictly inside glass boxes
+   ======================================================== */
+
+.boxesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20; /* Above video (5) and typography (2), below navbar (50) */
+}
+
+/* ========================================================
+   DESKTOP BOXES LAYER (>= 768px, 1440x900 canvas)
+   ======================================================== */
+.desktopBoxesLayer {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mobileBoxesLayer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .desktopBoxesLayer {
+    display: none;
+  }
+  .mobileBoxesLayer {
+    display: block;
+  }
+}
+
+/* Base Glass-Morphism Box Style for Desktop */
+.glassBoxDesktop {
+  position: absolute;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(202, 202, 202, 0.20);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: auto;
+  box-sizing: border-box;
+  user-select: none;
+  overflow: hidden; /* Guarantee text stays inside rectangular glass box */
+  will-change: transform, opacity;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.glassBoxDesktop:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(202, 202, 202, 0.35);
+}
+
+/* Common Typography Classes */
+.labelDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #C1C1C1;
+  white-space: pre-line;
+  text-align: center;
+  margin: 0;
+}
+
+.valueDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  color: #CACACA;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+/* --------------------------------------------------------
+   1. BOX 1: RANGE / FUEL (Desktop: 176x202 at left: 88, top: 176)
+   -------------------------------------------------------- */
+.boxRangeDesktop {
+  left: 88px;
+  top: 176px;
+  width: 176px;
+  height: 202px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.rangeTitleDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #C1C1C1;
+  text-align: center;
+  width: 100%;
+}
+
+.rangeCircleContainerDesktop {
+  position: relative;
+  width: 103px;
+  height: 98px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rangeSvgDesktop {
+  width: 103px;
+  height: 98px;
+  transform: rotate(-90deg);
+}
+
+.rangeTrack {
+  fill: none;
+  stroke: #171717;
+  stroke-width: 6px;
+}
+
+.rangeProgress {
+  fill: none;
+  stroke: #FFAE00;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rangeCenterContentDesktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gasIconCenterDesktop {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.rangeMilesColDesktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.rangeMilesNumberDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 16px;
+  color: #CACACA;
+  text-align: center;
+}
+
+.rangeMilesUnitDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 9.5px;
+  line-height: 11px;
+  color: #CACACA;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.rangeMpgDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 300;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+  text-align: center;
+  margin-top: 1px;
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------------
+   2. BOX 2: CAR STORY (Desktop: 319x114 at left: 88, top: 409)
+   -------------------------------------------------------- */
+.boxStoryDesktop {
+  left: 88px;
+  top: 409px;
+  width: 319px;
+  height: 114px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.storyTextDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  color: #CACACA;
+  margin: 0;
+  text-align: left;
+  max-width: 285px;
+  word-wrap: break-word;
+}
+
+/* --------------------------------------------------------
+   3. BOX 3: MAX SPEED (Desktop: 126x151 at left: 88, top: 562)
+   -------------------------------------------------------- */
+.boxSpeedDesktop {
+  left: 88px;
+  top: 562px;
+  width: 126px;
+  height: 151px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.boxHeaderRowDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.boxIconDesktop {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.speedValueColDesktop {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.speedNumberDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 44px;
+  color: #CACACA;
+  text-align: center;
+}
+
+.speedUnitDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #CACACA;
+  align-self: flex-end;
+  padding-right: 18px;
+  margin-top: -6px;
+}
+
+/* --------------------------------------------------------
+   4. BOX 4: TRANSMISSION (Desktop: 171x117 at left: 237, top: 562)
+   -------------------------------------------------------- */
+.boxTransmissionDesktop {
+  left: 237px;
+  top: 562px;
+  width: 171px;
+  height: 117px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.transmissionValueDesktop {
+  margin-top: 8px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: pre-line;
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------
+   5. BOX 5: MILEAGE (Desktop: 126x151 at left: 1052, top: 217)
+   -------------------------------------------------------- */
+.boxMileageDesktop {
+  left: 1052px;
+  top: 217px;
+  width: 126px;
+  height: 151px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mileageValueColDesktop {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mileageNumberDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 23px;
+  line-height: 28px;
+  color: #CACACA;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.mileageUnitDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #CACACA;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------
+   6. BOX 6: EXTERIOR COLOR (Desktop: 171x117 at left: 1203, top: 217)
+   -------------------------------------------------------- */
+.boxColorDesktop {
+  left: 1203px;
+  top: 217px;
+  width: 171px;
+  height: 117px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.colorValueDesktop {
+  margin-top: 6px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 26px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: pre-line;
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------
+   7. BOX 7: CONDITION (Desktop: 171x117 at left: 1052, top: 385)
+   -------------------------------------------------------- */
+.boxConditionDesktop {
+  left: 1052px;
+  top: 385px;
+  width: 171px;
+  height: 117px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.conditionValueDesktop {
+  margin-top: 8px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 26px;
+  color: #CACACA;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------
+   8. BOX 8: DRIVE TRAIN (Desktop: 126x151 at left: 1248, top: 353)
+   -------------------------------------------------------- */
+.boxDriveTrainDesktop {
+  left: 1248px;
+  top: 353px;
+  width: 126px;
+  height: 151px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.driveTrainValueDesktop {
+  margin-top: 8px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 42px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------
+   9. BOX 9: ENGINE + FUEL (Desktop: 319x114 at left: 1055, top: 523)
+   -------------------------------------------------------- */
+.boxEngineFuelDesktop {
+  left: 1055px;
+  top: 523px;
+  width: 319px;
+  height: 114px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.engineSectionDesktop {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8px;
+  min-width: 0;
+}
+
+.dividerDesktop {
+  width: 1px;
+  background-color: #979897;
+  height: 75px;
+  align-self: center;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transform-origin: top center;
+}
+
+.fuelSectionDesktop {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8px;
+  min-width: 0;
+}
+
+.engineValueDesktop {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.engineNumericDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.engineSuffixDesktop {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 15.5px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.fuelValueDesktop {
+  margin-top: 8px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+/* ========================================================
+   MOBILE BOXES LAYER (< 768px, 390x844 canvas)
+   ======================================================== */
+.glassBoxMobile {
+  position: absolute;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(202, 202, 202, 0.20);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: auto;
+  box-sizing: border-box;
+  user-select: none;
+  overflow: hidden; /* Guarantee text stays strictly inside glass box */
+  will-change: transform, opacity;
+}
+
+.labelMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 11px;
+  color: #C1C1C1;
+  white-space: pre-line;
+  text-align: center;
+  margin: 0;
+}
+
+.boxHeaderRowMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.boxIconMobile {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* 2. Box 2: Car Story on Mobile (left: 26, top: 571, width: 157, height: 48) */
+.boxStoryMobile {
+  position: absolute;
+  left: 26px;
+  top: 571px;
+  width: 157px;
+  height: 48px;
+  pointer-events: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+}
+
+.storyTextMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 11.5px;
+  color: #CACACA;
+  margin: 0;
+  text-align: left;
+  max-width: 157px;
+  word-wrap: break-word;
+}
+
+/* 3. Box 3: Max Speed on Mobile (left: 26, top: 629, width: 73, height: 87) */
+.boxSpeedMobile {
+  left: 26px;
+  top: 629px;
+  width: 73px;
+  height: 87px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.speedValueColMobile {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.speedNumberMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 28px;
+  color: #CACACA;
+  text-align: center;
+}
+
+.speedUnitMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  color: #CACACA;
+  align-self: flex-end;
+  padding-right: 8px;
+  margin-top: -4px;
+}
+
+/* 4. Box 4: Transmission on Mobile (left: 113, top: 629, width: 107, height: 73) */
+.boxTransmissionMobile {
+  left: 113px;
+  top: 629px;
+  width: 107px;
+  height: 73px;
+  padding: 6px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.transmissionValueMobile {
+  margin-top: 4px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 10.5px;
+  line-height: 14.5px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: pre-line;
+  text-align: center;
+  width: 100%;
+}
+
+/* 5. Box 5: Mileage on Mobile (left: 279, top: 218, width: 73, height: 87) */
+.boxMileageMobile {
+  left: 279px;
+  top: 218px;
+  width: 73px;
+  height: 87px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mileageValueColMobile {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mileageNumberMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 13.5px;
+  line-height: 17px;
+  color: #CACACA;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.mileageUnitMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  color: #CACACA;
+  text-align: center;
+  margin-top: 1px;
+}
+
+/* 6. Box 6: Exterior Color on Mobile (left: 230, top: 571, width: 107, height: 73) */
+.boxColorMobile {
+  left: 230px;
+  top: 571px;
+  width: 107px;
+  height: 73px;
+  padding: 6px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.colorValueMobile {
+  margin-top: 4px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: pre-line;
+  text-align: center;
+  width: 100%;
+}
+
+/* 7. Box 7: Condition on Mobile (left: 26, top: 728, width: 107, height: 73) */
+.boxConditionMobile {
+  left: 26px;
+  top: 728px;
+  width: 107px;
+  height: 73px;
+  padding: 6px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.conditionValueMobile {
+  margin-top: 5px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+  color: #CACACA;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+/* 8. Box 8: Drive Train on Mobile (left: 145, top: 714, width: 73, height: 87) */
+.boxDriveTrainMobile {
+  left: 145px;
+  top: 714px;
+  width: 73px;
+  height: 87px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.driveTrainValueMobile {
+  margin-top: 5px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 26px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+/* 9. Box 9: Engine + Fuel on Mobile (left: 229, top: 654, width: 107, height: 158) */
+.boxEngineFuelMobile {
+  left: 229px;
+  top: 654px;
+  width: 107px;
+  height: 158px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.engineSectionMobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dividerMobile {
+  width: 75px;
+  height: 1px;
+  background-color: #979897;
+  margin: 6px auto;
+  opacity: 0.8;
+  transform-origin: left center;
+}
+
+.fuelSectionMobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.engineNumericMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 11.5px;
+  line-height: 14.5px;
+  color: #CACACA;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.engineSuffixMobile {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 400;
+  font-size: 8.5px;
+  line-height: 11px;
+  color: #CACACA;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.fuelValueMobile {
+  margin-top: 3px;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+  color: #CACACA;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}

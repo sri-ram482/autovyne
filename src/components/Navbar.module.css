@@ -1,0 +1,387 @@
+/* =========================================
+   DESKTOP NAVIGATION (>= 768px)
+   ========================================= */
+
+.navDesktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 36px;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.desktopInner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 100%;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-decoration: none;
+}
+
+.logoDesktop {
+  width: 201px;
+  height: 67px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Center-aligned Navigation Links on Desktop */
+.navDesktopLinksContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLinksDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #CACACA;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #FFFFFF;
+}
+
+.navLinkActive {
+  color: #FFFFFF !important;
+}
+
+/* Container that wraps only the text so the underline length matches the text exactly */
+.navTextContainer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+}
+
+.navLabel {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Underline matches EXACT length of the text */
+.activeUnderline {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #D9D9D9;
+  border-radius: 100px;
+  margin-top: 3px;
+}
+
+.hoverUnderline {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 100px;
+  transition: width 0.25s ease;
+}
+
+.navLink:hover .hoverUnderline {
+  width: 100%;
+}
+
+/* Glassmorphism Cart Button */
+.cartButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 142px;
+  height: 50px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 20px;
+  gap: 14px;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+/* Circular Cart Badge / Count Indicator (Desktop) */
+.cartBadgeDesktop {
+  position: absolute;
+  top: -2px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #08090B;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 5;
+  user-select: none;
+}
+
+.cartButton:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.cartButton:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.cartText {
+  font-family: var(--font-poppins);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper that precisely clips and centers the 90px SVG icon to 26x26 */
+.cartIconDesktopWrapper {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cartIconDesktopSvg {
+  width: 26px;
+  height: 90px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* =========================================
+   MOBILE NAVIGATION (< 768px)
+   ========================================= */
+
+.navMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.mobileHeader {
+  height: 81px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.logoMobile {
+  width: 130px;
+  height: 43.33px;
+  display: block;
+  object-fit: contain;
+}
+
+.cartMobileBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 6px;
+  transition: opacity 0.2s ease;
+}
+
+/* Circular Cart Badge / Count Indicator (Mobile) */
+.cartBadgeMobile {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #08090B;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 5;
+  user-select: none;
+}
+
+.cartMobileBtn:hover {
+  opacity: 0.8;
+}
+
+.cartIconMobileWrapper {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cartIconMobileSvg {
+  width: 20px;
+  height: 69px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Mobile dropdown navigation menu ALIGNED TO RIGHT SIDE */
+.mobileMenu {
+  position: absolute;
+  top: 62px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.mobileNavLink {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19.5px;
+  color: #CACACA;
+  text-decoration: none;
+  text-align: right;
+  transition: color 0.2s ease;
+}
+
+.mobileNavLinkActive {
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF !important;
+}
+
+.mobileTextContainer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  width: fit-content;
+}
+
+.mobileNavLabel {
+  display: block;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.mobileActiveUnderline {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #D9D9D9;
+  border-radius: 100px;
+  margin-top: 1px;
+}
+
+/* Responsive display switches */
+@media (min-width: 768px) {
+  .navMobile {
+    display: none;
+  }
+  .navDesktop {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .navDesktop {
+    display: none;
+  }
+  .navMobile {
+    display: block;
+  }
+}

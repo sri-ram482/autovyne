@@ -1,0 +1,1998 @@
+/* ========================================================
+   AUTOVYNE — CART ITEMS LAYOUT + SLIDER STYLES
+   Figma Reference:
+     - Desktop Frame (247:1619, 1440x900):
+       * Cart Items Box (Rectangle 33, 256:10):
+         left: 27px, top: 410px, width: 911px, height: 421px
+         background: rgba(255, 255, 255, 0.1)
+         border: 1px solid rgba(202, 202, 202, 0.2)
+         backdrop-filter: blur(20px)
+         border-radius: 15px
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25)
+       * Car Video (250:1987):
+         left: 36px, top: 375px, width: 575px, height: 323px
+       * Remove Button (256:5):
+         left: 55px, top: 427px, width: 74px, height: 23px
+         radius: 5px
+       * Slider Left Chevron (273:131):
+         left: 55px, top: 640px, width: 20px, height: 20px
+       * Slider Right Chevron (273:134):
+         left: 575px, top: 640px, width: 20px, height: 20px
+     - Mobile Frame (247:1829, 390x844):
+       * Car Video (273:185):
+         left: 43px, top: 323px, width: 288px, height: 162px
+       * Remove Button (273:186):
+         left: 43px, top: 326px, width: 44px, height: 14px
+         radius: 3px
+       * Slider Left Chevron (273:254):
+         left: 43px, top: 458px, width: 15px, height: 15px
+       * Slider Right Chevron (273:257):
+         left: 316px, top: 457px, width: 15px, height: 15px
+   ======================================================== */
+
+.cartItemsSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* ========================================================
+   DESKTOP (>= 768px, 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 1. Large Glass-morphism Cart Items Box */
+.cartItemsBoxDesktop {
+  position: absolute;
+  left: 27px;
+  top: 410px;
+  width: 911px;
+  height: 421px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* 2. Video Slider Viewport */
+.videoViewportDesktop {
+  position: absolute;
+  left: 36px;
+  top: 375px;
+  width: 575px;
+  height: 323px;
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 15;
+}
+
+.slideTrackDesktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slideItemDesktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+.cartVideoDesktop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 3. Remove Button */
+.removeBtnDesktop {
+  position: absolute;
+  left: 55px;
+  top: 427px;
+  width: 74px;
+  height: 23px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 25;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.removeBtnDesktop:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(202, 202, 202, 0.4);
+}
+
+.removeBtnDesktop:active {
+  transform: scale(0.97);
+}
+
+.trashIconDesktop {
+  width: 12px;
+  height: 12px;
+  display: block;
+  pointer-events: none;
+}
+
+.removeTextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  color: #CACACA;
+  letter-spacing: 0.5px;
+  display: block;
+  pointer-events: none;
+}
+
+/* 4. Circular Slider Chevrons */
+.sliderBtnDesktop {
+  position: absolute;
+  top: 640px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 25;
+  outline: none;
+  transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sliderBtnDesktop:not(.btnDisabled):hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(202, 202, 202, 0.4);
+}
+
+.sliderBtnDesktop:not(.btnDisabled):active {
+  transform: scale(0.93);
+}
+
+.btnLeftDesktop {
+  left: 55px;
+}
+
+.btnRightDesktop {
+  left: 575px;
+}
+
+.chevronIconDesktop {
+  width: 10px;
+  height: 10px;
+  display: block;
+  pointer-events: none;
+}
+
+/* Disabled State */
+.btnDisabled {
+  opacity: 0.25 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* ========================================================
+   MOBILE (< 768px, 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Video Slider Viewport */
+.videoViewportMobile {
+  position: absolute;
+  left: 43px;
+  top: 323px;
+  width: 288px;
+  height: 162px;
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 15;
+}
+
+.slideTrackMobile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slideItemMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+.cartVideoMobile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Remove Button Mobile */
+.removeBtnMobile {
+  position: absolute;
+  left: 43px;
+  top: 326px;
+  width: 44px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 3px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 4px;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 25;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.removeBtnMobile:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(202, 202, 202, 0.4);
+}
+
+.trashIconMobile {
+  width: 7px;
+  height: 7px;
+  display: block;
+  pointer-events: none;
+}
+
+.removeTextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 7.5px;
+  color: #CACACA;
+  display: block;
+  pointer-events: none;
+}
+
+/* Circular Slider Chevrons Mobile */
+.sliderBtnMobile {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 25;
+  outline: none;
+  transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sliderBtnMobile:not(.btnDisabled):hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(202, 202, 202, 0.4);
+}
+
+.btnLeftMobile {
+  left: 43px;
+  top: 458px;
+}
+
+.btnRightMobile {
+  left: 316px;
+  top: 457px;
+}
+
+.chevronIconMobile {
+  width: 7px;
+  height: 7px;
+  display: block;
+  pointer-events: none;
+}
+
+/* ========================================================
+   CART ITEM DETAILS — DESKTOP
+   ======================================================== */
+.carTitleDesktop {
+  position: absolute;
+  left: 615px;
+  top: 427px;
+  width: auto;
+  max-width: 220px;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  white-space: nowrap;
+  pointer-events: auto;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.priceContainerDesktop {
+  position: absolute;
+  left: 845px;
+  top: 425px;
+  display: flex;
+  align-items: baseline;
+  pointer-events: auto;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.priceValueDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #CACACA;
+}
+
+.priceUnitDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin-left: 1px;
+}
+
+.descriptionRowDesktop {
+  position: absolute;
+  left: 615px;
+  top: 456px;
+  width: 139px;
+  height: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: auto;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.descWordDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  letter-spacing: 0;
+  color: #979897;
+  text-transform: uppercase;
+}
+
+.descDotDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  color: #979897;
+}
+
+.detailsBoxDesktop {
+  position: absolute;
+  left: 676px;
+  top: 487px;
+  width: 183px;
+  height: 272px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.detailRowDesktop {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detailIconDesktop {
+  width: 25px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.detailTextColDesktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 9px;
+  margin-right: auto;
+}
+
+.detailValueRowDesktop {
+  width: 142px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detailLabelDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.detailValueDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.detailValuePlaceholder {
+  color: #979897 !important;
+}
+
+.editBtnDesktop {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.editBtnDesktop:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.editTextDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #CACACA;
+}
+
+.pencilIconDesktop {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.dropdownBtnDesktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.2s ease;
+}
+
+.dropdownBtnDesktop:hover {
+  opacity: 0.8;
+}
+
+.dropdownArrowDesktop {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.dropdownArrowOpen {
+  transform: rotate(180deg);
+}
+
+.dividerLineDesktop {
+  width: 183px;
+  height: 1px;
+  background: #454545;
+  border: none;
+  margin: 0;
+  flex-shrink: 0;
+  transform-origin: left center;
+}
+
+/* ========================================================
+   CART ITEM DETAILS — MOBILE
+   ======================================================== */
+.carTitleMobile {
+  position: absolute;
+  left: 42px;
+  top: 287px;
+  width: 167px;
+  height: 26px;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  white-space: nowrap;
+  pointer-events: auto;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.priceContainerMobile {
+  position: absolute;
+  left: 286px;
+  top: 287px;
+  width: 58px;
+  height: 26px;
+  display: flex;
+  align-items: baseline;
+  pointer-events: auto;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.priceValueMobile {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+}
+
+.priceUnitMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 25.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin-left: 1px;
+}
+
+.descriptionRowMobile {
+  position: absolute;
+  left: 42px;
+  top: 313px;
+  width: 99px;
+  height: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  pointer-events: auto;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.descWordMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 7.5px;
+  letter-spacing: 0;
+  color: #979897;
+  text-transform: uppercase;
+}
+
+.descDotMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 7.5px;
+  color: #979897;
+}
+
+.detailsRowMobile {
+  position: absolute;
+  left: 78px;
+  top: 456px;
+  width: 221px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+  z-index: 30;
+}
+
+.detailsRowMobileOpen {
+  z-index: 100;
+}
+
+.detailColMobile {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.detailIconMobile {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.detailTextColMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.detailValueRowMobile {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.detailLabelMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 8px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.detailValueMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 11px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.pencilIconMobile {
+  width: 7px;
+  height: 7px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.dropdownArrowMobile {
+  width: 7px;
+  height: 7px;
+  object-fit: contain;
+  pointer-events: none;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* ========================================================
+   POPUPS (CALENDAR & LOCATION)
+   ======================================================== */
+.popupWrapperDesktop {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: 0;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.popupWrapperMobile {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.calendarPopup {
+  width: 300px;
+  background: rgba(14, 16, 20, 0.98);
+  border: 1px solid rgba(202, 202, 202, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 14px;
+  user-select: none;
+  animation: popupSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.calendarPopupMobile {
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendarMonthTitle {
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  font-weight: 500;
+  color: #CACACA;
+}
+
+.calendarNav {
+  display: flex;
+  gap: 6px;
+}
+
+.calendarNavBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 6px;
+  color: #CACACA;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+  font-size: 14px;
+  outline: none;
+}
+
+.calendarNavBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.calendarWeekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  font-weight: 500;
+  color: #979897;
+  margin-bottom: 6px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.calendarDayCell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-poppins);
+  font-size: 12px;
+  color: #CACACA;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+  outline: none;
+}
+
+.calendarDayCell:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.calendarDaySelected {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+.calendarDayInRange {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.dayDisabled {
+  opacity: 0.25;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.locationDropdown {
+  width: 220px;
+  background: rgba(14, 16, 20, 0.98);
+  border: 1px solid rgba(202, 202, 202, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 6px 0;
+  overflow: hidden;
+  animation: popupSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.locationDropdownMobile {
+  width: 200px;
+}
+
+.locationOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  color: #CACACA;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.locationOption:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.locationOptionSelected {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 500;
+}
+
+.locationCheck {
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================
+   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}
+
+/* ========================================================
+   MAIN SPECIFICATIONS GLASS BOX — DESKTOP (Figma node 256:23 box_8)
+   left: 55px, top: 710px, width: 425px, height: 90px
+   ======================================================== */
+.mainSpecsBoxDesktop {
+  position: absolute;
+  left: 55px;
+  top: 710px;
+  width: 425px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.specSectionDesktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px 6px;
+}
+
+.mainSpecsBoxDesktop > .specSectionDesktop:nth-of-type(1) {
+  width: 141px;
+}
+
+.mainSpecsBoxDesktop > .specSectionDesktop:nth-of-type(2) {
+  width: 127px;
+}
+
+.mainSpecsBoxDesktop > .specSectionDesktop:nth-of-type(3) {
+  width: 157px;
+}
+
+.specHeaderDesktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
+.specIconDesktop {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.specLabelDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.specValueBlockDesktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 38px;
+}
+
+.engineNumericDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.engineSuffixDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.specValueBoldDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0;
+  color: #CACACA;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.specDividerDesktop {
+  position: absolute;
+  top: 23px;
+  width: 1px;
+  height: 44px;
+  background: #979897;
+  transform-origin: center;
+}
+
+/* ========================================================
+   FIVE AMENITIES — DESKTOP (Figma node 260:61 Frame 25)
+   left: 500px, top: 776px, width: 401px, height: 24px
+   ======================================================== */
+.amenitiesContainerDesktop {
+  position: absolute;
+  left: 500px;
+  top: 776px;
+  width: 401px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.amenityItemDesktop {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  will-change: transform;
+}
+
+.amenityIconDesktop {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.amenityTextColDesktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.amenityValueDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.amenityLabelDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  letter-spacing: 0;
+  color: #979897;
+  white-space: nowrap;
+}
+
+/* ========================================================
+   MAIN SPECIFICATIONS GLASS BOX — MOBILE (Figma node 273:200 box_8)
+   left: 76px, top: 496px, width: 237px, height: 49px
+   ======================================================== */
+.mainSpecsBoxMobile {
+  position: absolute;
+  left: 76px;
+  top: 496px;
+  width: 237px;
+  height: 49px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.specSectionMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px 2px;
+}
+
+.mainSpecsBoxMobile > .specSectionMobile:nth-of-type(1) {
+  width: 80px;
+}
+
+.mainSpecsBoxMobile > .specSectionMobile:nth-of-type(2) {
+  width: 74px;
+}
+
+.mainSpecsBoxMobile > .specSectionMobile:nth-of-type(3) {
+  width: 83px;
+}
+
+.specHeaderMobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.specIconMobile {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.specLabelMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.specValueBlockMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.engineNumericMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 8px;
+  line-height: 11px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.engineSuffixMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.specValueBoldMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 8px;
+  line-height: 11px;
+  letter-spacing: 0;
+  color: #CACACA;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.specDividerMobile {
+  position: absolute;
+  top: 12px;
+  width: 1px;
+  height: 25px;
+  background: #979897;
+  transform-origin: center;
+}
+
+/* ========================================================
+   FIVE AMENITIES — MOBILE (Figma node 273:233 Frame 62)
+   left: 81px, top: 555px, width: 226px, height: 18px
+   ======================================================== */
+.amenitiesContainerMobile {
+  position: absolute;
+  left: 81px;
+  top: 555px;
+  width: 226px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.amenityItemMobile {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  will-change: transform;
+}
+
+.amenityIconMobile {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.amenityTextColMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.amenityValueMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 8px;
+  line-height: 9px;
+  letter-spacing: 0;
+  color: #CACACA;
+  white-space: nowrap;
+}
+
+.amenityLabelMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 7px;
+  letter-spacing: 0;
+  color: #979897;
+  white-space: nowrap;
+}
+
+/* ========================================================
+   ORDER SUMMARY GLASS-MORPHISM BOX — DESKTOP (1440x900)
+   Figma: Rectangle 26 (247:1935):
+     left: 984px, top: 248px, width: 390px, height: 582px
+   ======================================================== */
+.orderSummaryBoxDesktop {
+  position: absolute;
+  left: 984px;
+  top: 248px;
+  width: 390px;
+  height: 582px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding: 25px 23px 27px 23px;
+  pointer-events: auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.orderHeadingDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #CACACA;
+  margin: 0 0 16px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.orderRowDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rentalLabelColDesktop {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.orderLabelDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #CACACA;
+}
+
+.rentalCalcSubtextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #979897;
+}
+
+.orderPriceDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 20px;
+  color: #CACACA;
+}
+
+.orderDividerDesktop {
+  width: 100%;
+  height: 1px;
+  background: #454545;
+  border-radius: 100px;
+  margin: 11px 0;
+}
+
+.orderLabelWithIconDesktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orderSubLabelDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #979897;
+}
+
+.infoIconDesktop {
+  width: 16px;
+  height: 15px;
+  object-fit: contain;
+  display: block;
+}
+
+.totalLabelDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #CACACA;
+}
+
+.totalPriceDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 22px;
+  color: #CACACA;
+}
+
+.validationErrorDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  color: #EF4444;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: -29px;
+}
+
+.checkoutBtnDesktop {
+  width: 272px;
+  height: 41px;
+  margin: 44px auto 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #CACACA;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.checkoutBtnDesktop:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(202, 202, 202, 0.4);
+  color: #FFFFFF;
+}
+
+.checkoutArrowDesktop {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.promoGroupDesktop {
+  width: 247px;
+  margin: 36px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.promoHeaderDesktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.promoTagIconDesktop {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.promoTitleDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  color: #CACACA;
+}
+
+.promoInputRowDesktop {
+  position: relative;
+  width: 247px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+}
+
+.promoInputDesktop {
+  width: 247px;
+  height: 23px;
+  border-radius: 5px 12px 12px 5px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  padding: 0 68px 0 10px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  color: #CACACA;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.promoInputDesktop:focus {
+  border-color: rgba(202, 202, 202, 0.5);
+}
+
+.promoInputDesktop::placeholder {
+  color: #979897;
+  font-size: 8px;
+}
+
+.promoApplyBtnDesktop {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65px;
+  height: 23px;
+  border-radius: 100px;
+  background: #3A3A3A;
+  border: 1px solid rgba(202, 202, 202, 0.25);
+  color: #FFFFFF;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.promoApplyBtnDesktop:hover {
+  background: #4A4A4A;
+  border-color: rgba(202, 202, 202, 0.45);
+  color: #FFFFFF;
+}
+
+.promoErrorTextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: #F87171;
+  text-align: center;
+}
+
+.promoSuccessTextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: #4ADE80;
+  text-align: center;
+}
+
+.securityDividerDesktop {
+  width: 343px;
+  height: 1px;
+  background: #454545;
+  border-radius: 100px;
+  margin: 28px auto 16px auto;
+}
+
+.securityGroupDesktop {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.protectIconDesktop {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  display: block;
+}
+
+.securityTextColDesktop {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.securityTitleDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #CACACA;
+}
+
+.securitySubtextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10px;
+  color: #979897;
+}
+
+/* ========================================================
+   ORDER SUMMARY GLASS-MORPHISM BOX — MOBILE (390x844)
+   Figma: Rectangle 37 (273:141):
+     left: 45px, top: 584px, width: 300px, height: 230px
+   ======================================================== */
+.orderSummaryBoxMobile {
+  position: absolute;
+  left: 45px;
+  top: 584px;
+  width: 300px;
+  height: 230px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding: 8px 16px;
+  pointer-events: auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileOrderInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.orderHeadingMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 7px;
+  line-height: 9px;
+  letter-spacing: 0.3px;
+  color: #CACACA;
+  margin: 0 0 4px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.orderRowMobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 11px;
+}
+
+.rentalLabelColMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.orderLabelMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+}
+
+.rentalCalcSubtextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 6px;
+  color: #979897;
+}
+
+.orderPriceMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+}
+
+.orderDividerMobile {
+  width: 100%;
+  height: 1px;
+  background: #454545;
+  border-radius: 100px;
+  margin: 3px 0;
+}
+
+.orderLabelWithIconMobile {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.orderSubLabelMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  color: #979897;
+}
+
+.infoIconMobile {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.totalLabelMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+}
+
+.totalPriceMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+}
+
+.validationErrorMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 6.5px;
+  line-height: 9px;
+  color: #EF4444;
+  text-align: center;
+  margin-top: 1px;
+  margin-bottom: -10px;
+}
+
+.checkoutBtnMobile {
+  width: 110px;
+  height: 20px;
+  margin: 10px auto 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  color: #CACACA;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.checkoutBtnMobile:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+}
+
+.checkoutArrowMobile {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.promoGroupMobile {
+  width: 247px;
+  margin: 12px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.promoHeaderMobile {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.promoTagIconMobile {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.promoTitleMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+}
+
+.promoInputRowMobile {
+  position: relative;
+  width: 247px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+}
+
+.promoInputMobile {
+  width: 247px;
+  height: 23px;
+  border-radius: 5px 12px 12px 5px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  padding: 0 68px 0 8px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  color: #CACACA;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.promoInputMobile:focus {
+  border-color: rgba(202, 202, 202, 0.5);
+}
+
+.promoInputMobile::placeholder {
+  color: #979897;
+  font-size: 7px;
+}
+
+.promoApplyBtnMobile {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65px;
+  height: 23px;
+  border-radius: 100px;
+  background: #3A3A3A;
+  border: 1px solid rgba(202, 202, 202, 0.25);
+  color: #FFFFFF;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  box-sizing: border-box;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.promoApplyBtnMobile:hover {
+  background: #4A4A4A;
+  border-color: rgba(202, 202, 202, 0.45);
+  color: #FFFFFF;
+}
+
+.promoInputErrorMobile {
+  border-color: #EF4444 !important;
+}
+
+.promoApplyBtnErrorMobile {
+  border-color: #EF4444 !important;
+}
+
+.promoErrorTextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 6px;
+  color: #F87171;
+  text-align: center;
+}
+
+.promoSuccessTextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 6px;
+  color: #4ADE80;
+  text-align: center;
+}
+
+.securityDividerMobile {
+  width: 267px;
+  height: 1px;
+  background: #454545;
+  border-radius: 100px;
+  margin: 10px auto 8px auto;
+}
+
+.securityGroupMobile {
+  width: 247px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.protectIconMobile {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+.securityTextColMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.securityTitleMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 9px;
+  color: #CACACA;
+}
+
+.securitySubtextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 5px;
+  line-height: 7px;
+  color: #979897;
+}
+
+

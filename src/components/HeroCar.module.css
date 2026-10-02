@@ -1,0 +1,165 @@
+/* =========================================
+   AUTOVYNE — HERO CAR & WHEELS
+   STAGE 2: INDEPENDENT WHEELS + ENTRANCE + ROTATION
+   Updated with New Figma Tires (Node 344:3 & 344:5)
+   ========================================= */
+
+.heroCarSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Strict requirement: no scrollbars under any circumstances */
+  pointer-events: none;
+  z-index: 10; /* Above background (0), below navbar (50) */
+}
+
+/* =========================================
+   DESKTOP HERO CAR (>= 768px, Figma 1440x900)
+   ========================================= */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carContainerDesktop {
+  position: absolute;
+  left: 424px;
+  top: 281px;
+  width: 841px;
+  height: 333px;
+  will-change: transform;
+  opacity: 0; /* Set to 1 by GSAP on initialization */
+  transform-style: flat;
+}
+
+/* Front Wheel (Left in viewer perspective) - BEHIND car body */
+.frontWheelDesktop {
+  position: absolute;
+  left: 69px;
+  top: 152px;
+  width: 204px;
+  height: 181px;
+  transform-origin: 51.23% 50.14%; /* Exact physical center of axle / Porsche hub */
+  z-index: 1; /* Strictly behind car body */
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Rear Wheel (Right in viewer perspective) - BEHIND car body */
+.rearWheelDesktop {
+  position: absolute;
+  left: 551px;
+  top: 148px;
+  width: 207px;
+  height: 183px;
+  transform-origin: 51.09% 50.27%; /* Exact physical center of axle / Porsche hub */
+  z-index: 1; /* Strictly behind car body */
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Car Body - IN FRONT of wheels */
+.carBodyDesktop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 841px;
+  height: 315px;
+  z-index: 10; /* Strictly in front of wheels */
+  transform: translateZ(1px);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* =========================================
+   MOBILE HERO CAR (< 768px, Figma 390x844)
+   ========================================= */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carContainerMobile {
+  position: absolute;
+  left: 60px;
+  top: 416px;
+  width: 292px;
+  height: 115.62px;
+  will-change: transform;
+  opacity: 0;
+  transform-style: flat;
+}
+
+.frontWheelMobile {
+  position: absolute;
+  left: 23.96px;
+  top: 52.78px;
+  width: 70.83px;
+  height: 62.84px;
+  transform-origin: 51.23% 50.14%;
+  z-index: 1; /* Strictly behind car body */
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.rearWheelMobile {
+  position: absolute;
+  left: 191.31px;
+  top: 51.39px;
+  width: 71.73px;
+  height: 63.54px;
+  transform-origin: 51.09% 50.27%;
+  z-index: 1; /* Strictly behind car body */
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.carBodyMobile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 292px;
+  height: 109.37px;
+  z-index: 10; /* Strictly in front of wheels */
+  transform: translateZ(1px);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive display toggle */
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

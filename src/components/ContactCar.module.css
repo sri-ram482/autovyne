@@ -1,0 +1,183 @@
+/* ========================================================
+   AUTOVYNE — CONTACT PAGE CAR & WHEELS
+   Figma Reference:
+     - Desktop (Figma 238:1017, Node 344:16):
+       carContainer at left: 361px, top: 302px, 841x333px
+       front wheel at left: 69px, top: 152px, 204x181px
+       rear wheel at left: 551px, top: 148px, 207x183px
+       car body at left: 0px, top: 0px, 841x315px
+     - Mobile (Figma 238:1267, Node 344:26):
+       carContainer at left: 64px, top: 409px, 292x116px
+       front wheel at left: 24px, top: 53px, 71x63px
+       rear wheel at left: 191px, top: 51px, 72x64px
+       car body at left: 0px, top: 0px, 292x109px
+   ======================================================== */
+
+.contactCarSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Strict requirement: no page scrollbars */
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ========================================================
+   DESKTOP CONTACT CAR (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carContainerDesktop {
+  position: absolute;
+  left: 361px;
+  top: 302px;
+  width: 841px;
+  height: 333px;
+  will-change: transform;
+  opacity: 0; /* Set to 1 by GSAP on init */
+  transform-style: flat;
+}
+
+/* Front Wheel (Left in viewer perspective) - Behind car body */
+.frontWheelDesktop {
+  position: absolute;
+  left: 69px;
+  top: 152px;
+  width: 204px;
+  height: 181px;
+  transform-origin: 51.23% 50.14%; /* Exact physical center of axle / Porsche hub */
+  z-index: 1; /* Strictly behind car body */
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Rear Wheel (Right in viewer perspective) - Behind car body */
+.rearWheelDesktop {
+  position: absolute;
+  left: 551px;
+  top: 148px;
+  width: 207px;
+  height: 183px;
+  transform-origin: 51.09% 50.27%; /* Exact physical center of axle / Porsche hub */
+  z-index: 1; /* Strictly behind car body */
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Car Body - In front of wheels */
+.carBodyDesktop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 841px;
+  height: 315px;
+  z-index: 10; /* Strictly in front of wheels */
+  transform: translateZ(1px);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ========================================================
+   MOBILE CONTACT CAR (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carContainerMobile {
+  position: absolute;
+  left: 64px;
+  top: 409px;
+  width: 292px;
+  height: 116px;
+  will-change: transform;
+  opacity: 0; /* Set to 1 by GSAP on init */
+  transform-style: flat;
+}
+
+.frontWheelMobile {
+  position: absolute;
+  left: 24px;
+  top: 53px;
+  width: 71px;
+  height: 63px;
+  transform-origin: 51.23% 50.14%;
+  z-index: 1;
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.rearWheelMobile {
+  position: absolute;
+  left: 191px;
+  top: 51px;
+  width: 72px;
+  height: 64px;
+  transform-origin: 51.09% 50.27%;
+  z-index: 1;
+  transform: translateZ(0);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.carBodyMobile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 292px;
+  height: 109px;
+  z-index: 10;
+  transform: translateZ(1px);
+  will-change: transform;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive display toggle */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

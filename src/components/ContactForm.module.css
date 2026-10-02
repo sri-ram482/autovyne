@@ -1,0 +1,759 @@
+/* ========================================================
+   AUTOVYNE — CONTACT PAGE CONTACT FORM
+   Figma Reference:
+     - Desktop Frame 32 (Node 238:1073: x: 51, y: 487, w: 642, h: 382)
+       - Heading "Send Us a Message" (Node 238:1438): x: 51, y: 487, w: 196, h: 30
+         Font: Poppins 800 (Extra Bold), 20px, line-height 30px, #CACACA
+       - Subtext "Fill in the details and we will get back you shortly." (Node 238:1439): x: 51, y: 518, w: 292, h: 18
+         Font: Poppins 400 (Regular), 12px, line-height 18px, #979897
+       - Rectangle 21 "Your Name *" (Node 238:1440): x: 51, y: 552, w: 305, h: 48, radius: 5px
+         Person icon (Node 238:1454): x: 61, y: 566, 20x20
+       - Rectangle 22 "Email Address *" (Node 238:1443): x: 387, y: 552, w: 305, h: 48, radius: 5px
+         Email icon (Node 238:1455): x: 402, y: 566, 20x20
+       - Rectangle 24 "Phone Number *" (Node 238:1445): x: 51, y: 616, w: 305, h: 48, radius: 5px
+         Phone icon (Node 238:1456): x: 61, y: 632, 20x20
+       - Rectangle 23 "Enquiry Type" (Node 238:1444): x: 387, y: 616, w: 305, h: 48, radius: 5px
+         Dropdown arrow (Node 238:1458): x: 648, y: 632, 20x20
+       - Rectangle 25 "Your Message *" (Node 238:1446): x: 51, y: 682, w: 642, h: 96, radius: 5px
+         Chat Bubble icon (Node 238:1457): x: 61, y: 699, 20x20
+       - Button "Send Message" (Node 238:1045): x: 51, y: 798, w: 272, h: 50, radius: 100px
+         Right arrow (Node 238:1451): x: 263, y: 779, 30x90 (box)
+       - Security Shield (Node 238:1452): x: 372, y: 808, 30x30, #979897
+       - Security Text (Node 238:1453): x: 411, y: 811, w: 237, h: 23, #979897, 15px
+
+     - Mobile Frame 51 (Node 244:1587: x: 21, y: 521, w: 331, h: 243)
+       - Heading "Send Us a Message" (Node 244:1589): x: 22, y: 521, 118x18, 12px 800 #CACACA
+       - Subtext "Fill in the details and we will get back you shortly." (Node 244:1590): x: 21, y: 539, 171x11, 7px #979897
+       - Fields (2x2 grid): 157x25, radius: 2px
+       - Message: 331x64, radius: 5px
+       - Button: 128x26, radius: 50px
+       - Security: shield 15x15, text 7px #979897
+   ======================================================== */
+
+.contactFormSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15; /* Above car (z: 10) as requested */
+}
+
+/* ========================================================
+   DESKTOP IMPLEMENTATION (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.formContainerDesktop {
+  position: absolute;
+  left: 51px;
+  top: 487px;
+  width: 642px;
+  height: auto;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.headingDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+/* Subtext */
+.subtextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #979897;
+  margin: 1px 0 16px 0;
+  padding: 0;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+/* 2x2 Grid for Desktop */
+.gridDesktop {
+  display: grid;
+  grid-template-columns: 305px 305px;
+  column-gap: 31px;
+  row-gap: 16px;
+  width: 642px;
+  position: relative;
+  z-index: 25; /* Above textarea */
+}
+
+/* Base Field Wrapper */
+.fieldDesktop {
+  position: relative;
+  width: 305px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fieldDesktop:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(202, 202, 202, 0.35);
+}
+
+.fieldDesktop:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(202, 202, 202, 0.45);
+}
+
+.fieldError {
+  border: 1px solid #EF4444 !important;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.35) !important;
+}
+
+/* Field Icons */
+.fieldIconDesktop {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.emailIconDesktop {
+  left: 15px; /* Exact match Node 238:1455 pos: x: 402 relative to x: 387 = 15px */
+}
+
+/* Inputs */
+.inputDesktop {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 16px 0 46px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #CACACA;
+  box-sizing: border-box;
+}
+
+.emailInputDesktop {
+  padding-left: 46px;
+}
+
+.inputDesktop::placeholder {
+  color: #979897;
+  opacity: 1;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+/* Dropdown */
+.dropdownDesktop {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 30;
+}
+
+.dropdownOpen {
+  z-index: 60 !important;
+}
+
+.dropdownTriggerDesktop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 15px;
+  box-sizing: border-box;
+}
+
+.dropdownValueDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #979897;
+}
+
+.dropdownValueSelected {
+  color: #CACACA !important;
+}
+
+.dropdownChevronDesktop {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s ease;
+  object-fit: contain;
+}
+
+.dropdownChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu Overlay */
+.dropdownMenuDesktop {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: rgba(14, 16, 20, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.25);
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  padding: 6px 0;
+  z-index: 60;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdownItemDesktop {
+  padding: 10px 18px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #979897;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownItemDesktop:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #CACACA;
+}
+
+.dropdownItemSelected {
+  color: #CACACA;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Textarea Field */
+.textareaFieldDesktop {
+  position: relative;
+  width: 642px;
+  height: 96px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.textareaFieldDesktop:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(202, 202, 202, 0.35);
+}
+
+.textareaFieldDesktop:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(202, 202, 202, 0.45);
+}
+
+.textareaIconDesktop {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.textareaDesktop {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 16px 14px 46px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #CACACA;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.textareaDesktop::placeholder {
+  color: #979897;
+  opacity: 1;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+/* Actions Row: Button + Security */
+.actionsRowDesktop {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 642px;
+}
+
+/* Send Message Button */
+.buttonDesktop {
+  width: 272px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px 0 40px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.buttonDesktop:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(202, 202, 202, 0.4);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.buttonDesktop:active {
+  transform: scale(0.99);
+}
+
+.buttonSubmitted {
+  justify-content: center !important;
+  padding: 0 !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(202, 202, 202, 0.35) !important;
+}
+
+.buttonTextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #CACACA;
+  user-select: none;
+}
+
+.buttonArrowDesktop {
+  width: 24px;
+  height: 14px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.buttonDesktop:hover .buttonArrowDesktop {
+  transform: translateX(4px);
+}
+
+/* Security Information */
+.securityRowDesktop {
+  display: flex;
+  align-items: center;
+  margin-left: 49px;
+  gap: 10px;
+  user-select: none;
+}
+
+.securityIconDesktop {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.securityTextDesktop {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #979897;
+  white-space: nowrap;
+}
+
+
+/* ========================================================
+   MOBILE IMPLEMENTATION (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.formContainerMobile {
+  position: absolute;
+  left: 21px;
+  top: 521px;
+  width: 331px;
+  height: auto;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.headingMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 18px;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+/* Subtext */
+.subtextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  color: #979897;
+  margin: 0 0 6px 0;
+  padding: 0;
+  letter-spacing: 0;
+  user-select: none;
+}
+
+/* 2x2 Grid for Mobile */
+.gridMobile {
+  display: grid;
+  grid-template-columns: 157px 157px;
+  column-gap: 17px;
+  row-gap: 10px;
+  width: 331px;
+  position: relative;
+  z-index: 25; /* Above textarea */
+}
+
+/* Base Field Wrapper (Mobile) */
+.fieldMobile {
+  position: relative;
+  width: 157px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.fieldMobile:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(202, 202, 202, 0.45);
+}
+
+.fieldIconMobile {
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.emailIconMobile {
+  left: 11px;
+}
+
+.inputMobile {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 8px 0 26px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #CACACA;
+  box-sizing: border-box;
+}
+
+.emailInputMobile {
+  padding-left: 28px;
+}
+
+.inputMobile::placeholder {
+  color: #979897;
+  opacity: 1;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+}
+
+/* Dropdown Mobile */
+.dropdownMobile {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 30;
+}
+
+.dropdownTriggerMobile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 0 10px;
+  box-sizing: border-box;
+}
+
+.dropdownValueMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #979897;
+}
+
+.dropdownChevronMobile {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+  object-fit: contain;
+}
+
+.dropdownMenuMobile {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  width: 100%;
+  background: rgba(14, 16, 20, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(202, 202, 202, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  padding: 4px 0;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdownItemMobile {
+  padding: 6px 10px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 13px;
+  color: #979897;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownItemMobile:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #CACACA;
+}
+
+/* Textarea Mobile */
+.textareaFieldMobile {
+  position: relative;
+  width: 331px;
+  height: 64px;
+  margin-top: 13px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  z-index: 10;
+}
+
+.textareaFieldMobile:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(202, 202, 202, 0.45);
+}
+
+.textareaIconMobile {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.textareaMobile {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 7px 8px 7px 28px;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #CACACA;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.textareaMobile::placeholder {
+  color: #979897;
+  opacity: 1;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+}
+
+/* Actions Row Mobile */
+.actionsRowMobile {
+  display: flex;
+  align-items: center;
+  margin-top: 13px;
+  width: 331px;
+}
+
+.buttonMobile {
+  width: 128px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px 0 18px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.buttonMobile:active {
+  transform: scale(0.98);
+}
+
+.buttonSubmittedMobile {
+  justify-content: center !important;
+  padding: 0 !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(202, 202, 202, 0.35) !important;
+}
+
+.buttonTextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #CACACA;
+  user-select: none;
+}
+
+.buttonArrowMobile {
+  width: 8px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.securityRowMobile {
+  display: flex;
+  align-items: center;
+  margin-left: 11px;
+  gap: 5px;
+  user-select: none;
+}
+
+.securityIconMobile {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.securityTextMobile {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 10.5px;
+  color: #979897;
+  white-space: nowrap;
+}
+
+/* ========================================================
+   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   ======================================================== */
+@media (min-width: 768px) {
+  .desktopWrapper {
+    display: block;
+  }
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

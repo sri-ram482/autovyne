@@ -1,0 +1,607 @@
+/* =========================================
+   AUTOVYNE — HERO TYPOGRAPHY & CTA (STAGE 3)
+   Exact Figma Specifications
+   ========================================= */
+
+/* Stacking Layers */
+.backLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5; /* Strictly BEHIND HeroCar (z-index: 10) */
+  overflow: hidden;
+}
+
+.frontLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20; /* Strictly IN FRONT OF HeroCar (z-index: 10) */
+  overflow: hidden;
+}
+
+/* =========================================
+   DESKTOP WRAPPER (>= 768px, Figma 1440x900)
+   ========================================= */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. DRIVE A HIGHER STANDARD (Node 51:16) */
+.driveDesktop {
+  position: absolute;
+  left: 180px;
+  top: 211px;
+  width: 356px;
+  height: 42px;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 42px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 2. Premium (Node 50:15) */
+.premiumDesktop {
+  position: absolute;
+  left: 566px;
+  top: 154px;
+  width: 367px;
+  height: 120px;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 120px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 3. CAR RENTALS (Node 50:14) — Sits behind the car roof */
+.carRentalsDesktop {
+  position: absolute;
+  left: 36px;
+  top: 211px;
+  width: 906px;
+  height: 200px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 133px;
+  line-height: 199.5px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 4. Description Layout (Node 51:18 & 51:17) */
+.descriptionDesktop {
+  position: absolute;
+  left: 46px;
+  top: 368px;
+  width: 459px;
+  height: 173px;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* 5. EXPLORE OUR FLEET BUTTON (Node 51:23) */
+.exploreBtnDesktop {
+  position: absolute;
+  left: 36px;
+  top: 551px;
+  width: 276px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 36px;
+  padding-right: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  overflow: visible;
+  user-select: none;
+}
+
+.exploreBtnDesktop:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35), 0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+.exploreBtnDesktop:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.exploreBtnTextDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #CACACA;
+  flex: none;
+  white-space: nowrap;
+}
+
+.exploreBtnArrowDesktop {
+  width: 26px;
+  height: 90px;
+  object-fit: contain;
+  margin-left: 12px;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.exploreBtnDesktop:hover .exploreBtnArrowDesktop {
+  transform: translateX(4px);
+}
+
+/* 6. "in" (Node 51:25) — Front layer */
+.inTextDesktop {
+  position: absolute;
+  left: 1318px;
+  top: 363px;
+  width: 56px;
+  height: 96px;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 96px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 7. "NEW YORK" (Node 51:24) — Front layer */
+.newYorkTextDesktop {
+  position: absolute;
+  left: 675px;
+  top: 397px;
+  width: 699px;
+  height: 192px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 128px;
+  line-height: 192px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 8. normal_description_layout (Node 37:32) */
+.normalDescDesktop {
+  position: absolute;
+  left: 1150px;
+  top: 132px;
+  width: 101px;
+  height: 162px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.normalDescItemDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #979897;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.normalDescLineDesktop {
+  width: 101px;
+  height: 2px;
+  background-color: #979897;
+  margin-top: 0;
+}
+
+/* 9. Frame 4 — FOLLOW THE JOURNEY & SOCIAL MEDIA ICONS (Node 139:13) */
+.socialGroupDesktop {
+  position: absolute;
+  left: 707px;
+  top: 530px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 25;
+}
+
+.followJourneyDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 1.36px;
+  color: #979897;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+  width: 108px;
+  height: 12px;
+}
+
+.socialIconsDesktop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+  height: 90px;
+}
+
+.socialLinkDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 90px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialLinkDesktop:hover {
+  opacity: 1 !important;
+  filter: brightness(1.25);
+}
+
+.socialIconDesktop {
+  width: 20px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* =========================================
+   MOBILE WRAPPER (< 768px, Figma 390x844)
+   ========================================= */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. DRIVE A HIGHER STANDARD (Node 123:93) */
+.driveMobile {
+  position: absolute;
+  left: 15px;
+  top: 97px;
+  width: 212px;
+  height: 25px;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 2. Premium (Node 123:92) */
+.premiumMobile {
+  position: absolute;
+  left: 15px;
+  top: 107px;
+  width: 184px;
+  height: 60px;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 57px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 3. CAR (Node 136:2) */
+.carTextMobile {
+  position: absolute;
+  left: 15px;
+  top: 134px;
+  width: 158px;
+  height: 82px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 96px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 4. RENTALS (Node 123:91) */
+.rentalsTextMobile {
+  position: absolute;
+  left: 15px;
+  top: 191px;
+  width: 436px;
+  height: 118px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 58px;
+  line-height: 87px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 5. Description Layout (Node 123:94 & 123:95) */
+.descriptionMobile {
+  position: absolute;
+  left: 19px;
+  top: 261px;
+  width: 231px;
+  height: 102px;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* 6. EXPLORE OUR FLEET BUTTON (Node 123:119) */
+.exploreBtnMobile {
+  position: absolute;
+  left: 19px;
+  top: 345px;
+  width: 150px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 21px;
+  padding-right: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(202, 202, 202, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  overflow: visible;
+  user-select: none;
+  z-index: 35;
+}
+
+.exploreBtnMobile:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.exploreBtnMobile:active {
+  transform: scale(0.98);
+}
+
+.exploreBtnTextMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16.5px;
+  letter-spacing: 0;
+  color: #CACACA;
+  flex: none;
+  white-space: nowrap;
+}
+
+.exploreBtnArrowMobile {
+  width: 14px;
+  height: 48px;
+  object-fit: contain;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.exploreBtnMobile:hover .exploreBtnArrowMobile {
+  transform: translateX(3px);
+}
+
+/* 7. "in" (Node 123:124) — Front layer */
+.inTextMobile {
+  position: absolute;
+  left: 335px;
+  top: 343px;
+  width: 39px;
+  height: 68px;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 67.5px;
+  letter-spacing: 0;
+  color: #5F605F;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 8. "NEW YORK" (Node 123:123) — Front layer */
+.newYorkTextMobile {
+  position: absolute;
+  left: 47px;
+  top: 380px;
+  width: 328px;
+  height: 90px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 90px;
+  letter-spacing: 0;
+  color: #CACACA;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* 9. normal_description_layout (Node 123:113) */
+.normalDescMobile {
+  position: absolute;
+  left: 310px;
+  top: 211px;
+  width: 50px;
+  height: 98px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.normalDescItemMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16.5px;
+  letter-spacing: 0;
+  color: #1E1F22;
+  height: 17px;
+  margin-bottom: 1px;
+}
+
+.normalDescLineMobile {
+  width: 50px;
+  height: 2px;
+  background-color: #1E1F22;
+  margin-top: 1px;
+}
+
+/* 10. Frame 6 — FOLLOW THE JOURNEY & SOCIAL MEDIA ICONS (Node 139:22) */
+.socialGroupMobile {
+  position: absolute;
+  left: 149px;
+  top: 343px;
+  width: 181px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.followJourneyMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 6px;
+  line-height: 9px;
+  letter-spacing: 1.02px;
+  color: #979897;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+  width: 81px;
+  height: 9px;
+}
+
+.socialIconsMobile {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 5px;
+  height: 90px;
+}
+
+.socialLinkMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 90px;
+  opacity: 0.85;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.socialIconMobile {
+  width: 15px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Responsive display toggle */
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+}

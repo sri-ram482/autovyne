@@ -1,0 +1,331 @@
+/* ========================================================
+   AUTOVYNE — EXPERIENCES PAGE TYPOGRAPHY & SOCIAL MEDIA
+   Exact Figma Implementation:
+     - Desktop Frame (225:379, 1440x900)
+     - Mobile Frame (225:569, 390x844)
+   ======================================================== */
+
+.typographyRoot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Background Layer (z-index: 5): Behind ExperiencesCar (z-index: 10) on desktop */
+.headingLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Foreground Layer (z-index: 20): In front of ExperiencesCar (z-index: 10) on desktop */
+.foregroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* ========================================================
+   DESKTOP CONTAINER (>= 768px, Figma 1440x900)
+   ======================================================== */
+.desktopWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. REAL Heading (Desktop Node 225:659: x: 36, y: 117, w: 492, h: 300) */
+.realHeadingDesktop {
+  position: absolute;
+  left: 36px;
+  top: 117px;
+  width: 492px;
+  height: 300px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 200px;
+  line-height: 300px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* 2. EXPERIENCES Heading (Desktop Node 225:660: x: 37, y: 316, w: 668, h: 150) */
+.experiencesHeadingDesktop {
+  position: absolute;
+  left: 37px;
+  top: 316px;
+  width: 668px;
+  height: 150px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 150px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* 3. Experiences Description (Desktop Node 225:661: x: 517, y: 210, w: 261, h: 78) */
+.descriptionDesktop {
+  position: absolute;
+  left: 517px;
+  top: 210px;
+  width: 261px;
+  height: 78px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25.5px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* 4. FOLLOW THE JOURNEY & Social Frame (Desktop Frame 4, Node 225:467: x: 707, y: 530, w: 258, h: 90) */
+.socialFrameDesktop {
+  position: absolute;
+  left: 707px;
+  top: 530px;
+  width: 258px;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.followJourneyDesktop {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 1.36px;
+  color: #979897;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 108px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.socialIconsDesktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 90px;
+}
+
+.socialLinkDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 90px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialLinkDesktop:hover {
+  opacity: 1 !important;
+  filter: brightness(1.25);
+}
+
+.socialIconDesktop {
+  width: 20px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ========================================================
+   MOBILE CONTAINER (< 768px, Figma 390x844)
+   ======================================================== */
+.mobileWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 1. FOLLOW THE JOURNEY & Social Frame (Mobile Frame 6, Node 225:635: x: 18, y: 144, w: 181, h: 90) */
+.socialFrameMobile {
+  position: absolute;
+  left: 18px;
+  top: 144px;
+  width: 181px;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  pointer-events: auto;
+}
+
+.followJourneyMobile {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 6px;
+  line-height: 9px;
+  letter-spacing: 1.02px;
+  color: #979897;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 81px;
+  height: 9px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.socialIconsMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  height: 90px;
+}
+
+.socialLinkMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 90px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialLinkMobile:hover {
+  opacity: 1 !important;
+  filter: brightness(1.25);
+}
+
+.socialIconMobile {
+  width: 15px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* 2. REAL Heading (Mobile Node 234:911: x: 15, y: 170, w: 197, h: 120) */
+.realHeadingMobile {
+  position: absolute;
+  left: 15px;
+  top: 170px;
+  width: 197px;
+  height: 120px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 120px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* 3. EXPERIENCES Heading (Mobile Node 234:912: x: 15, y: 252, w: 268, h: 60) */
+.experiencesHeadingMobile {
+  position: absolute;
+  left: 15px;
+  top: 252px;
+  width: 268px;
+  height: 60px;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0;
+  color: #5F605F;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* 4. Experiences Description (Mobile Node 234:913: x: 14, y: 299, w: 184, h: 54) */
+.descriptionMobile {
+  position: absolute;
+  left: 14px;
+  top: 299px;
+  width: 184px;
+  height: 54px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #979897;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+  .headingLayer {
+    z-index: 15;
+  }
+}
