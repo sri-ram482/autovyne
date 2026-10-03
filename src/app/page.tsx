@@ -9,13 +9,7 @@ import FooterFeatures from '@/components/FooterFeatures';
 export default function Home() {
   return (
     <main
-      style={{
-        position: 'relative',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        backgroundColor: '#08090B',
-      }}
+      className="page-root-container"
       id="autovyne-root"
     >
       {/* 1. BACKGROUND (Base #08090B + 5 Figma Gradients + background_gradients image treatment) */}

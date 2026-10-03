@@ -12,13 +12,7 @@ export const metadata: Metadata = {
 export default function CartPage() {
   return (
     <main
-      style={{
-        position: 'relative',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        backgroundColor: '#08090B',
-      }}
+      className="page-root-container"
       id="autovyne-cart-root"
     >
       {/* 1. Global Background (Exact approved base #08090B + 5 gradients) */}

@@ -31,14 +31,31 @@
    ======================================================== */
 
 .cartItemsSection {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   pointer-events: none;
   z-index: 15;
+}
+
+@media (min-width: 1024px) {
+  .cartItemsSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cartItemsSection {
+    position: relative;
+    width: 100%;
+    min-height: 1080px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-bottom: 60px;
+  }
 }
 
 /* ========================================================
@@ -232,17 +249,21 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
-  height: 100%;
+  max-width: 480px;
+  min-height: 1080px;
+  height: auto;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   pointer-events: none;
+  padding-bottom: 60px;
 }
 
 /* Video Slider Viewport */
 .videoViewportMobile {
   position: absolute;
-  left: 43px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 323px;
   width: 288px;
   height: 162px;
@@ -282,22 +303,22 @@
 /* Remove Button Mobile */
 .removeBtnMobile {
   position: absolute;
-  left: 43px;
+  left: calc(50% - 144px);
   top: 326px;
-  width: 44px;
-  height: 14px;
+  width: 54px;
+  height: 18px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(202, 202, 202, 0.2);
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 0 4px;
+  padding: 0 6px;
   cursor: pointer;
   pointer-events: auto;
   z-index: 25;
@@ -313,8 +334,8 @@
 }
 
 .trashIconMobile {
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
   display: block;
   pointer-events: none;
 }
@@ -322,8 +343,8 @@
 .removeTextMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 5px;
-  line-height: 7.5px;
+  font-size: 8px;
+  line-height: 12px;
   color: #CACACA;
   display: block;
   pointer-events: none;
@@ -332,8 +353,8 @@
 /* Circular Slider Chevrons Mobile */
 .sliderBtnMobile {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
@@ -360,17 +381,17 @@
 }
 
 .btnLeftMobile {
-  left: 43px;
-  top: 458px;
+  left: calc(50% - 144px);
+  top: 456px;
 }
 
 .btnRightMobile {
-  left: 316px;
-  top: 457px;
+  left: calc(50% + 124px);
+  top: 456px;
 }
 
 .chevronIconMobile {
-  width: 7px;
+  width: 9px;
   height: 7px;
   display: block;
   pointer-events: none;
@@ -611,9 +632,10 @@
    ======================================================== */
 .carTitleMobile {
   position: absolute;
-  left: 42px;
+  left: calc(50% - 144px);
   top: 287px;
-  width: 167px;
+  width: auto;
+  max-width: 175px;
   height: 26px;
   font-family: var(--font-poppins);
   font-weight: 700;
@@ -630,9 +652,10 @@
 
 .priceContainerMobile {
   position: absolute;
-  left: 286px;
+  right: calc(50% - 144px);
+  left: auto;
   top: 287px;
-  width: 58px;
+  width: auto;
   height: 26px;
   display: flex;
   align-items: baseline;
@@ -662,9 +685,9 @@
 
 .descriptionRowMobile {
   position: absolute;
-  left: 42px;
+  left: calc(50% - 144px);
   top: 313px;
-  width: 99px;
+  width: auto;
   height: 8px;
   display: inline-flex;
   align-items: center;
@@ -694,9 +717,10 @@
 
 .detailsRowMobile {
   position: absolute;
-  left: 78px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 456px;
-  width: 221px;
+  width: 226px;
   height: 20px;
   display: flex;
   align-items: center;
@@ -1179,7 +1203,8 @@
    ======================================================== */
 .mainSpecsBoxMobile {
   position: absolute;
-  left: 76px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 496px;
   width: 237px;
   height: 49px;
@@ -1297,9 +1322,10 @@
    ======================================================== */
 .amenitiesContainerMobile {
   position: absolute;
-  left: 81px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 555px;
-  width: 226px;
+  width: 236px;
   height: 18px;
   display: flex;
   align-items: center;
@@ -1672,10 +1698,12 @@
    ======================================================== */
 .orderSummaryBoxMobile {
   position: absolute;
-  left: 45px;
-  top: 584px;
-  width: 300px;
-  height: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 595px;
+  width: min(340px, calc(100% - 32px));
+  height: auto;
+  min-height: 420px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1683,7 +1711,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  padding: 8px 16px;
+  padding: 20px 18px 24px 18px;
   pointer-events: auto;
   z-index: 10;
   display: flex;
@@ -1699,11 +1727,11 @@
 .orderHeadingMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 800;
-  font-size: 7px;
-  line-height: 9px;
-  letter-spacing: 0.3px;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
   color: #CACACA;
-  margin: 0 0 4px 0;
+  margin: 0 0 8px 0;
   padding: 0;
   text-transform: uppercase;
 }
@@ -1713,36 +1741,36 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 11px;
+  height: 24px;
 }
 
 .rentalLabelColMobile {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1px;
 }
 
 .orderLabelMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 7px;
-  line-height: 9px;
+  font-size: 13px;
+  line-height: 18px;
   color: #CACACA;
 }
 
 .rentalCalcSubtextMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 5px;
-  line-height: 6px;
+  font-size: 11px;
+  line-height: 14px;
   color: #979897;
 }
 
 .orderPriceMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 7px;
-  line-height: 9px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
   color: #CACACA;
 }
 
@@ -1751,70 +1779,70 @@
   height: 1px;
   background: #454545;
   border-radius: 100px;
-  margin: 3px 0;
+  margin: 6px 0;
 }
 
 .orderLabelWithIconMobile {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .orderSubLabelMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 7px;
-  line-height: 9px;
+  font-size: 13px;
+  line-height: 18px;
   color: #979897;
 }
 
 .infoIconMobile {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   object-fit: contain;
   display: block;
 }
 
 .totalLabelMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 7px;
-  line-height: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
   color: #CACACA;
 }
 
 .totalPriceMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 800;
-  font-size: 7px;
-  line-height: 9px;
+  font-size: 16px;
+  line-height: 22px;
   color: #CACACA;
 }
 
 .validationErrorMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 6.5px;
-  line-height: 9px;
+  font-size: 11px;
+  line-height: 15px;
   color: #EF4444;
   text-align: center;
-  margin-top: 1px;
-  margin-bottom: -10px;
+  margin-top: 6px;
+  margin-bottom: 2px;
 }
 
 .checkoutBtnMobile {
-  width: 110px;
-  height: 20px;
-  margin: 10px auto 0 auto;
+  width: 170px;
+  height: 38px;
+  margin: 16px auto 0 auto;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(202, 202, 202, 0.2);
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   font-family: var(--font-poppins), 'Poppins', sans-serif;
-  font-size: 7px;
+  font-size: 12px;
   font-weight: 400;
   color: #CACACA;
   cursor: pointer;
@@ -1828,29 +1856,29 @@
 }
 
 .checkoutArrowMobile {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   display: block;
 }
 
 .promoGroupMobile {
-  width: 247px;
-  margin: 12px auto 0 auto;
+  width: 100%;
+  margin: 16px auto 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .promoHeaderMobile {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .promoTagIconMobile {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   object-fit: contain;
   display: block;
 }
@@ -1858,29 +1886,29 @@
 .promoTitleMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 7px;
-  line-height: 9px;
+  font-size: 12px;
+  line-height: 16px;
   color: #CACACA;
 }
 
 .promoInputRowMobile {
   position: relative;
-  width: 247px;
-  height: 23px;
+  width: 100%;
+  height: 36px;
   display: flex;
   align-items: center;
 }
 
 .promoInputMobile {
-  width: 247px;
-  height: 23px;
-  border-radius: 5px 12px 12px 5px;
+  width: 100%;
+  height: 36px;
+  border-radius: 6px 16px 16px 6px;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(202, 202, 202, 0.2);
-  padding: 0 68px 0 8px;
+  padding: 0 82px 0 12px;
   font-family: var(--font-poppins), 'Poppins', sans-serif;
-  font-size: 7px;
+  font-size: 12px;
   font-weight: 400;
   color: #CACACA;
   outline: none;
@@ -1893,21 +1921,21 @@
 
 .promoInputMobile::placeholder {
   color: #979897;
-  font-size: 7px;
+  font-size: 12px;
 }
 
 .promoApplyBtnMobile {
   position: absolute;
   right: 0;
   top: 0;
-  width: 65px;
-  height: 23px;
+  width: 75px;
+  height: 36px;
   border-radius: 100px;
   background: #3A3A3A;
   border: 1px solid rgba(202, 202, 202, 0.25);
   color: #FFFFFF;
   font-family: var(--font-poppins), 'Poppins', sans-serif;
-  font-size: 7px;
+  font-size: 12px;
   font-weight: 400;
   cursor: pointer;
   display: flex;
@@ -1936,7 +1964,7 @@
 .promoErrorTextMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 6px;
+  font-size: 11px;
   color: #F87171;
   text-align: center;
 }
@@ -1944,31 +1972,31 @@
 .promoSuccessTextMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 6px;
+  font-size: 11px;
   color: #4ADE80;
   text-align: center;
 }
 
 .securityDividerMobile {
-  width: 267px;
+  width: 100%;
   height: 1px;
   background: #454545;
   border-radius: 100px;
-  margin: 10px auto 8px auto;
+  margin: 16px auto 12px auto;
 }
 
 .securityGroupMobile {
-  width: 247px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .protectIconMobile {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   display: block;
 }
@@ -1976,22 +2004,22 @@
 .securityTextColMobile {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1px;
 }
 
 .securityTitleMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 7px;
-  line-height: 9px;
+  font-size: 11px;
+  line-height: 15px;
   color: #CACACA;
 }
 
 .securitySubtextMobile {
   font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 5px;
-  line-height: 7px;
+  font-size: 9px;
+  line-height: 13px;
   color: #979897;
 }
 

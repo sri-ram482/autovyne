@@ -20,20 +20,22 @@
     top: 0;
     left: 0;
     width: 100%;
+    min-height: 844px;
     height: 100%;
     pointer-events: none;
     z-index: 35;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .mobileWrapper {
     position: relative;
     width: 100%;
-    max-width: 390px;
+    max-width: 480px;
+    min-height: 844px;
     height: 100%;
     margin: 0 auto;
     pointer-events: none;
-    overflow: hidden;
+    overflow: visible;
   }
 
   /* Single Feature Item: Vertical stack, center-aligned */
@@ -78,6 +80,22 @@
     top: 775px;
     width: 73px;
     height: 39px;
+  }
+
+  @media (max-width: 389px) {
+    .itemPremiumFleet {
+      left: 12px;
+    }
+    .itemSupport {
+      left: 98px;
+    }
+    .itemSecureBooking {
+      left: 172px;
+    }
+    .itemLocations {
+      left: auto;
+      right: 12px;
+    }
   }
 
   /* Icon Elements */

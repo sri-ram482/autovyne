@@ -8,10 +8,23 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   pointer-events: none;
   z-index: 21;
-  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    min-height: 844px;
+    height: 100%;
+    overflow: visible;
+  }
 }
 
 /* ========================================================
@@ -153,7 +166,7 @@
   pointer-events: auto;
 }
 
-/* Exact Figma coordinates and dimensions for Mobile */
+/* Exact Figma coordinates and dimensions for Mobile (390px) */
 .itemPremiumFleetMobile {
   left: 264px;
   top: 538px;
@@ -180,6 +193,25 @@
   top: 687px;
   width: 73px;
   height: 39px;
+}
+
+@media (max-width: 389px) {
+  .itemPremiumFleetMobile {
+    left: auto;
+    right: 32px;
+  }
+  .itemSecureBookingMobile {
+    left: auto;
+    right: 20px;
+  }
+  .itemSupportMobile {
+    left: auto;
+    right: 32px;
+  }
+  .itemLocationsMobile {
+    left: auto;
+    right: 16px;
+  }
 }
 
 /* Mobile Icon */

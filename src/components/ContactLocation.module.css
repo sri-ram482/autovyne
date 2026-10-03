@@ -19,14 +19,30 @@
    ======================================================== */
 
 .locationSection {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   pointer-events: none;
-  z-index: 15; /* Interactive section above background and cards */
+  z-index: 15;
+}
+
+@media (min-width: 1024px) {
+  .locationSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .locationSection {
+    position: relative;
+    width: 100%;
+    min-height: 844px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 /* ========================================================
@@ -142,8 +158,9 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
-  height: 100%;
+  max-width: 480px;
+  min-height: 844px;
+  height: auto;
   margin: 0 auto;
   overflow: visible;
   pointer-events: none;
@@ -151,9 +168,10 @@
 
 .locationContainerMobile {
   position: absolute;
-  left: 98px;
+  right: 20px;
+  left: auto;
   top: 731px;
-  width: 254px;
+  width: min(254px, calc(100% - 40px));
   height: auto;
   pointer-events: auto;
   box-sizing: border-box;

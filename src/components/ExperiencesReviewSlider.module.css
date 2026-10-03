@@ -8,14 +8,30 @@
    ======================================================== */
 
 .reviewsSection {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   pointer-events: none;
   z-index: 30;
+}
+
+@media (min-width: 1024px) {
+  .reviewsSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .reviewsSection {
+    position: relative;
+    width: 100%;
+    min-height: 844px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 /* ========================================================
@@ -232,10 +248,12 @@
     display: block;
     position: relative;
     width: 100%;
-    max-width: 390px;
-    height: 100%;
+    max-width: 480px;
+    min-height: 844px;
+    height: auto;
     margin: 0 auto;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     pointer-events: none;
   }
 
@@ -369,9 +387,10 @@
   /* Frame 39 Controls: x: 74px, y: 717px, w: 262px, h: 27px */
   .controlsMobile {
     position: absolute;
-    left: 64px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 717px;
-    width: 262px;
+    width: min(262px, calc(100% - 40px));
     height: 27px;
     display: flex;
     align-items: center;

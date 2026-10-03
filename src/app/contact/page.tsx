@@ -10,13 +10,7 @@ import ContactLocation from '@/components/ContactLocation';
 export default function ContactPage() {
   return (
     <main
-      style={{
-        position: 'relative',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        backgroundColor: '#08090B',
-      }}
+      className="page-root-container"
       id="autovyne-contact-root"
     >
       {/* 1. Global Background (Exact approved base #08090B + 5 gradients) */}

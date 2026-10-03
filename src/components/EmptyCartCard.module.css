@@ -14,14 +14,30 @@
    ======================================================== */
 
 .emptyCartSection {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   pointer-events: none;
   z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .emptyCartSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .emptyCartSection {
+    position: relative;
+    width: 100%;
+    min-height: 844px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 /* ========================================================
@@ -103,18 +119,21 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
-  height: 100%;
+  max-width: 480px;
+  min-height: 844px;
+  height: auto;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   pointer-events: none;
 }
 
 .emptyBoxMobile {
   position: absolute;
-  left: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 290px;
-  width: 330px;
+  width: min(340px, calc(100% - 32px));
   height: 220px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);

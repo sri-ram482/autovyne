@@ -70,21 +70,60 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   background-color: var(--bg-base);
   color: #FFFFFF;
   font-family: var(--font-poppins);
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure no global scrolling */
-#__next, body, html {
-  overflow: hidden !important;
+/* Desktop (>= 1024px): Viewport-fitted as approved in Figma */
+@media (min-width: 1024px) {
+  html, body {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+}
+
+/* Mobile & Tablet (< 1024px): Natural vertical scrolling allowed, horizontal overflow strictly prevented */
+@media (max-width: 1023px) {
+  html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Responsive Page Root Container */
+.page-root-container {
+  position: relative;
+  width: 100%;
+  background-color: #08090B;
+}
+
+@media (min-width: 1024px) {
+  .page-root-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .page-root-container {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 a {

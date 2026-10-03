@@ -8,13 +8,7 @@ import FleetCarSlider from '@/components/FleetCarSlider';
 export default function FleetPage() {
   return (
     <main
-      style={{
-        position: 'relative',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        backgroundColor: '#08090B',
-      }}
+      className="page-root-container"
       id="autovyne-fleet-root"
     >
       {/* 1. Global Background (Base #08090B + 5 Figma Gradients + background_gradients image treatment) */}

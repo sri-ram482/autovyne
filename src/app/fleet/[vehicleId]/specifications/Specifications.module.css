@@ -7,35 +7,66 @@
 
 .specificationsRoot {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
   background-color: #08090B;
 }
 
-.stageContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 10;
-}
+@media (min-width: 1024px) {
+  .specificationsRoot {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-.stageInner {
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
+  .stageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+  }
 
-@media (max-width: 767px) {
   .stageInner {
-    max-width: 390px;
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .specificationsRoot {
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .stageContainer {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    pointer-events: none;
+    z-index: 10;
+    padding-bottom: 60px;
+  }
+
+  .stageInner {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    min-height: 844px;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
   }
 }
 

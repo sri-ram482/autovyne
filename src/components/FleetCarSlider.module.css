@@ -4,14 +4,31 @@
    ======================================================== */
 
 .sliderContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
   pointer-events: none;
   z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .sliderContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sliderContainer {
+    position: relative;
+    width: 100%;
+    min-height: 844px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-bottom: 40px;
+  }
 }
 
 .carsViewport {
