@@ -36,12 +36,13 @@
 
 @media (max-width: 1023px) {
   .locationSection {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 844px;
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: visible;
+    min-height: 870px;
+    height: 100%;
+    overflow: visible;
   }
 }
 
@@ -159,7 +160,7 @@
   position: relative;
   width: 100%;
   max-width: 480px;
-  min-height: 844px;
+  min-height: 870px;
   height: auto;
   margin: 0 auto;
   overflow: visible;

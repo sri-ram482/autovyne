@@ -41,18 +41,18 @@
 
 @media (max-width: 1023px) {
   .specificationsRoot {
-    min-height: 100vh;
+    min-height: 890px;
     height: auto;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: visible;
   }
 
   .stageContainer {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 890px;
     height: auto;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: visible;
     pointer-events: none;
     z-index: 10;
@@ -63,7 +63,7 @@
     position: relative;
     width: 100%;
     max-width: 480px;
-    min-height: 844px;
+    min-height: 890px;
     height: auto;
     margin: 0 auto;
     overflow: visible;

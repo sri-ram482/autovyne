@@ -9,10 +9,24 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden; /* Strict requirement: no scrollbars under any circumstances */
   pointer-events: none;
   z-index: 10; /* Above background (0), below navbar (50) */
+}
+
+@media (min-width: 1024px) {
+  .heroCarSection {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .heroCarSection {
+    min-height: 870px;
+    height: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
 }
 
 /* =========================================
@@ -96,7 +110,7 @@
   max-width: 390px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carContainerMobile {

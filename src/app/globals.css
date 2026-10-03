@@ -85,19 +85,30 @@ html, body {
 /* Desktop (>= 1024px): Viewport-fitted as approved in Figma */
 @media (min-width: 1024px) {
   html, body {
-    overflow-y: hidden;
+    overflow: hidden;
     height: 100vh;
+    width: 100vw;
   }
 }
 
-/* Mobile & Tablet (< 1024px): Natural vertical scrolling allowed, horizontal overflow strictly prevented */
+/* Mobile & Tablet (< 1024px): Document-level natural vertical scrolling allowed, horizontal overflow strictly prevented */
 @media (max-width: 1023px) {
-  html, body {
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 100vh;
+  html {
+    min-height: 100%;
     height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
   }
 }
 
@@ -118,11 +129,44 @@ html, body {
 
 @media (max-width: 1023px) {
   .page-root-container {
+    position: relative;
     width: 100%;
     min-height: 100vh;
+    min-height: 100dvh;
     height: auto;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: visible;
+  }
+
+  /* Route-specific mobile scrollable heights to guarantee complete reachability */
+  #autovyne-root {
+    min-height: 870px;
+    padding-bottom: 50px;
+  }
+
+  #autovyne-fleet-root {
+    min-height: 870px;
+    padding-bottom: 50px;
+  }
+
+  #autovyne-contact-root {
+    min-height: 870px;
+    padding-bottom: 50px;
+  }
+
+  #autovyne-experiences-root {
+    min-height: 870px;
+    padding-bottom: 50px;
+  }
+
+  #autovyne-specs-root {
+    min-height: 890px;
+    padding-bottom: 50px;
+  }
+
+  #autovyne-cart-root {
+    min-height: 1140px;
+    padding-bottom: 60px;
   }
 }
 

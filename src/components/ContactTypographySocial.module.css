@@ -20,10 +20,24 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
   pointer-events: none;
   z-index: 5; /* Behind car (z: 10) for large text; interactive social is z: 20 */
+}
+
+@media (min-width: 1024px) {
+  .contactTextSection {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .contactTextSection {
+    min-height: 870px;
+    height: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
 }
 
 /* ========================================================
@@ -203,9 +217,10 @@
   position: relative;
   width: 100%;
   max-width: 390px;
+  min-height: 870px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* 1. GET IN TOUCH (Node 244:1554: x: 115, y: 187, w: 198, h: 18) */

@@ -50,9 +50,9 @@
   .cartItemsSection {
     position: relative;
     width: 100%;
-    min-height: 1080px;
+    min-height: 1140px;
     height: auto;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: visible;
     padding-bottom: 60px;
   }
@@ -1018,6 +1018,11 @@
   }
   .mobileWrapper {
     display: block;
+    position: relative;
+    width: 100%;
+    min-height: 1140px;
+    height: auto;
+    overflow: visible;
   }
 }
 

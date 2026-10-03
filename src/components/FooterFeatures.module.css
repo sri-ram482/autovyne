@@ -21,7 +21,7 @@
 
 @media (max-width: 1023px) {
   .container {
-    min-height: 844px;
+    min-height: 870px;
     height: 100%;
     overflow: visible;
   }
@@ -141,6 +141,7 @@
   position: relative;
   width: 100%;
   max-width: 390px;
+  min-height: 870px;
   height: 100%;
   margin: 0 auto;
   overflow: visible;

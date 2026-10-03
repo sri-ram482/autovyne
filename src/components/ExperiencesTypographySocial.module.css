@@ -5,36 +5,42 @@
      - Mobile Frame (225:569, 390x844)
    ======================================================== */
 
-.typographyRoot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-/* Background Layer (z-index: 5): Behind ExperiencesCar (z-index: 10) on desktop */
-.headingLayer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* Foreground Layer (z-index: 20): In front of ExperiencesCar (z-index: 10) on desktop */
+.typographyRoot,
+.headingLayer,
 .foregroundLayer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   pointer-events: none;
+}
+
+.headingLayer {
+  z-index: 5;
+}
+
+.foregroundLayer {
   z-index: 20;
+}
+
+@media (min-width: 1024px) {
+  .typographyRoot,
+  .headingLayer,
+  .foregroundLayer {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1023px) {
+  .typographyRoot,
+  .headingLayer,
+  .foregroundLayer {
+    min-height: 870px;
+    height: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
 }
 
 /* ========================================================
@@ -185,9 +191,10 @@
   position: relative;
   width: 100%;
   max-width: 390px;
+  min-height: 870px;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* 1. FOLLOW THE JOURNEY & Social Frame (Mobile Frame 6, Node 225:635: x: 18, y: 144, w: 181, h: 90) */
