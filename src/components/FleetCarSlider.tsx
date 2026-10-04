@@ -404,7 +404,7 @@ export default function FleetCarSlider({ onVehicleChange }: FleetCarSliderProps)
   // Helper to get travel distance based on current window width
   const getTravelDistance = useCallback(() => {
     if (typeof window === 'undefined') return 1440;
-    const isDesktop = window.innerWidth >= 768;
+    const isDesktop = window.innerWidth >= 1024;
     return isDesktop
       ? Math.max(window.innerWidth, 1440)
       : Math.max(window.innerWidth, 390);

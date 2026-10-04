@@ -98,7 +98,7 @@
 /* ========================================================
    MOBILE VEHICLES (< 768px, 390x844 viewport)
    ======================================================== */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopLayer {
     display: none;
   }
@@ -109,7 +109,7 @@
 
   .mobileVehicle {
     position: absolute;
-    left: 70px;
+    left: clamp(20px, calc(50% - 132px), 70px);
     pointer-events: none;
     will-change: transform;
   }
@@ -161,7 +161,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .sliderBtn {
     top: 389px;
     width: 72px;
@@ -186,7 +186,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .sliderBtn {
     top: 449px;
     width: 26px;
@@ -194,11 +194,11 @@
   }
 
   .btnLeft {
-    left: 15px;
+    left: clamp(8px, 3vw, 15px);
   }
 
   .btnRight {
-    right: 15px;
+    right: clamp(8px, 3vw, 15px);
   }
 
   .chevronIcon {
@@ -282,7 +282,7 @@
 }
 
 /* Desktop indicator sizing & positioning (Figma 158:228) */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .indicatorsGroup {
     top: 667px;
     left: 671px;
@@ -299,10 +299,11 @@
 }
 
 /* Mobile indicator sizing & positioning (Figma 187:71) */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .indicatorsGroup {
     top: 540px;
-    left: 161px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 67px;
     height: 1px;
     gap: 3px;
@@ -339,7 +340,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopTextsLayer {
     display: none;
   }
@@ -492,7 +493,7 @@
 /* PRICE LAYOUT (Desktop: left 137px, top 673px, 241x131px) */
 .desktopPriceLayer {
   position: absolute;
-  left: 137px;
+  left: clamp(24px, 9.5vw, 137px);
   top: 673px;
   width: 241px;
   height: 131px;
@@ -588,7 +589,7 @@
    ======================================================== */
 .desktopRatingFrame {
   position: absolute;
-  left: 628px;
+  left: clamp(480px, 43.6vw, 628px);
   top: 704px;
   width: 327px;
   height: 118px;
@@ -847,7 +848,8 @@
 /* DESKTOP BUTTON SIZES (Figma 58:34 & 172:568) */
 .specsBtnDesktop {
   position: absolute;
-  left: 1156px;
+  right: clamp(24px, 4.6vw, 68px);
+  left: auto;
   top: 691px;
   width: 218px;
   height: 53px;
@@ -860,7 +862,8 @@
 
 .cartBtnDesktop {
   position: absolute;
-  left: 1154px;
+  right: clamp(24px, 4.6vw, 68px);
+  left: auto;
   top: 758px;
   width: 218px;
   height: 50px;
@@ -903,7 +906,7 @@
 /* ========================================================
    RESPONSIVE MEDIA QUERIES FOR STAGE 12
    ======================================================== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktopPriceLayer {
     display: block;
   }
@@ -924,7 +927,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopPriceLayer {
     display: none;
   }
@@ -939,6 +942,7 @@
   }
   .mobileRatingFrame {
     display: flex;
+    left: clamp(20px, calc(50% - 120px), 120px);
   }
   .mobileButtonsLayer {
     display: block;

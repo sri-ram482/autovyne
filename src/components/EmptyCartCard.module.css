@@ -56,10 +56,12 @@
 
 .emptyBoxDesktop {
   position: absolute;
-  left: 450px;
-  top: 310px;
-  width: 540px;
-  height: 260px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(540px, calc(100% - 40px));
+  height: auto;
+  min-height: 260px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -187,9 +189,9 @@
 }
 
 /* ========================================================
-   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   RESPONSIVE SWITCHER (>= 1024px vs < 1024px)
    ======================================================== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktopWrapper {
     display: block;
   }
@@ -198,7 +200,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }

@@ -94,7 +94,7 @@ export default function RentalSearchLayout() {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 768px)', () => {
+    mm.add('(min-width: 1024px)', () => {
       if (desktopContainerRef.current) {
         gsap.fromTo(
           desktopContainerRef.current,
@@ -104,7 +104,7 @@ export default function RentalSearchLayout() {
       }
     });
 
-    mm.add('(max-width: 767px)', () => {
+    mm.add('(max-width: 1023px)', () => {
       if (mobileContainerRef.current) {
         gsap.fromTo(
           mobileContainerRef.current,

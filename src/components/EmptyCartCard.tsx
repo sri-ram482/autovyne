@@ -12,9 +12,9 @@ export default function EmptyCartCard() {
     const mm = gsap.matchMedia();
 
     // ========================================================
-    // DESKTOP ANIMATION (>= 768px, 1440x900)
+    // DESKTOP ANIMATION (>= 1024px, Figma 1440x900)
     // ========================================================
-    mm.add('(min-width: 768px)', () => {
+    mm.add('(min-width: 1024px)', () => {
       if (boxDesktopRef.current) {
         gsap.fromTo(
           boxDesktopRef.current,
@@ -25,9 +25,9 @@ export default function EmptyCartCard() {
     });
 
     // ========================================================
-    // MOBILE ANIMATION (< 768px, 390x844)
+    // MOBILE & TABLET ANIMATION (< 1024px)
     // ========================================================
-    mm.add('(max-width: 767px)', () => {
+    mm.add('(max-width: 1023px)', () => {
       if (boxMobileRef.current) {
         gsap.fromTo(
           boxMobileRef.current,

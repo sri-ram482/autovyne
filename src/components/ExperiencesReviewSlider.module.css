@@ -240,7 +240,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }
@@ -249,7 +249,7 @@
     display: block;
     position: relative;
     width: 100%;
-    max-width: 480px;
+    max-width: min(540px, 100%);
     min-height: 870px;
     height: auto;
     margin: 0 auto;

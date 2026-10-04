@@ -757,9 +757,9 @@
 }
 
 /* ========================================================
-   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   RESPONSIVE SWITCHER (>= 1024px vs < 1024px)
    ======================================================== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktopWrapper {
     display: block;
   }
@@ -768,7 +768,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }

@@ -42,20 +42,20 @@
 
 .rentalSearchDesktop {
   position: absolute;
-  left: 71px;
+  left: clamp(24px, 4.5vw, 71px);
   top: 643px;
-  width: 1266px;
+  width: min(1266px, calc(100% - 48px));
   height: 124px;
   display: flex;
   align-items: center;
-  gap: 56px;
+  gap: clamp(16px, 3.5vw, 56px);
   pointer-events: auto;
 }
 
 /* Glass Card */
 .searchCardDesktop {
   position: relative;
-  width: 300px;
+  width: clamp(220px, 20vw, 300px);
   height: 122px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(202, 202, 202, 0.2);
@@ -198,7 +198,7 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
+  max-width: min(540px, 100%);
   min-height: 870px;
   height: 100%;
   margin: 0 auto;
@@ -519,7 +519,7 @@
 }
 
 /* Responsive display toggle */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }

@@ -209,7 +209,7 @@
 /* ========================================================
    RESPONSIVE VISIBILITY
    ======================================================== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktopRatingFrame {
     display: flex;
   }
@@ -218,7 +218,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopRatingFrame {
     display: none;
   }

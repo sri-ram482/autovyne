@@ -13,9 +13,10 @@
 
 @media (min-width: 1024px) {
   .specificationsRoot {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: clip;
+    overflow-y: auto;
   }
 
   .stageContainer {
@@ -41,7 +42,7 @@
 
 @media (max-width: 1023px) {
   .specificationsRoot {
-    min-height: 890px;
+    min-height: 1000px;
     height: auto;
     overflow-x: clip;
     overflow-y: visible;
@@ -50,7 +51,7 @@
   .stageContainer {
     position: relative;
     width: 100%;
-    min-height: 890px;
+    min-height: 1000px;
     height: auto;
     overflow-x: clip;
     overflow-y: visible;
@@ -62,8 +63,8 @@
   .stageInner {
     position: relative;
     width: 100%;
-    max-width: 480px;
-    min-height: 890px;
+    max-width: min(540px, 100%);
+    min-height: 1000px;
     height: auto;
     margin: 0 auto;
     overflow: visible;
@@ -118,7 +119,7 @@
   color: #CACACA;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .backButton {
     left: 20px;
     top: 179px;
@@ -173,7 +174,7 @@
   pointer-events: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopTypography {
     display: none;
   }
@@ -226,12 +227,14 @@
   will-change: transform, opacity;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .videoContainer {
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 363px;
-    width: 370px;
-    height: 208px;
+    width: min(370px, calc(100% - 20px));
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 

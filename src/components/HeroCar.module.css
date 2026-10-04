@@ -169,11 +169,12 @@
 }
 
 /* Responsive display toggle */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }
   .mobileWrapper {
     display: block;
+    max-width: min(540px, 100%);
   }
 }

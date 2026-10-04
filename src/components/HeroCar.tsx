@@ -21,9 +21,9 @@ export default function HeroCar() {
     const mm = gsap.matchMedia();
 
     // ========================================================
-    // DESKTOP TIMELINE (>= 768px, Figma 1440x900)
+    // DESKTOP TIMELINE (>= 1024px, Figma 1440x900)
     // ========================================================
-    mm.add('(min-width: 768px)', () => {
+    mm.add('(min-width: 1024px)', () => {
       if (
         !carDesktopRef.current ||
         !frontWheelDesktopRef.current ||
@@ -75,9 +75,9 @@ export default function HeroCar() {
     });
 
     // ========================================================
-    // MOBILE TIMELINE (< 768px, Figma 390x844)
+    // MOBILE & TABLET TIMELINE (< 1024px)
     // ========================================================
-    mm.add('(max-width: 767px)', () => {
+    mm.add('(max-width: 1023px)', () => {
       if (
         !carMobileRef.current ||
         !frontWheelMobileRef.current ||

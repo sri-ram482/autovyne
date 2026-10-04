@@ -75,9 +75,9 @@
 /* 1. Large Glass-morphism Cart Items Box */
 .cartItemsBoxDesktop {
   position: absolute;
-  left: 27px;
+  left: clamp(20px, 2.5vw, 27px);
   top: 410px;
-  width: 911px;
+  width: min(911px, calc(100% - 430px));
   height: 421px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -249,8 +249,8 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 480px;
-  min-height: 1080px;
+  max-width: min(540px, 100%);
+  min-height: 1140px;
   height: auto;
   margin: 0 auto;
   overflow-x: hidden;
@@ -1001,9 +1001,9 @@
 }
 
 /* ========================================================
-   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   RESPONSIVE SWITCHER (>= 1024px vs < 1024px)
    ======================================================== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktopWrapper {
     display: block;
   }
@@ -1012,7 +1012,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }
@@ -1386,9 +1386,10 @@
    ======================================================== */
 .orderSummaryBoxDesktop {
   position: absolute;
-  left: 984px;
+  right: clamp(20px, 3.2vw, 46px);
+  left: auto;
   top: 248px;
-  width: 390px;
+  width: clamp(340px, 28vw, 390px);
   height: 582px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);

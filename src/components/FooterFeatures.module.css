@@ -44,7 +44,8 @@
   position: absolute;
   left: 0;
   top: 790px;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 90px;
   pointer-events: auto;
 }
@@ -60,22 +61,22 @@
 
 /* Exact desktop group positions and widths from Figma */
 .groupPremiumFleetDesktop {
-  left: 78px;
+  left: clamp(24px, 5.4vw, 78px);
   width: 298px;
 }
 
 .groupSecureBookingDesktop {
-  left: 436px;
+  left: clamp(270px, 30.2vw, 436px);
   width: 271px;
 }
 
 .groupSupportDesktop {
-  left: 767px;
+  left: clamp(520px, 53.2vw, 767px);
   width: 262px;
 }
 
 .groupLocationsDesktop {
-  left: 1089px;
+  left: clamp(760px, 75.6vw, 1089px);
   width: 269px;
 }
 
@@ -140,7 +141,7 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
+  max-width: min(540px, 100%);
   min-height: 870px;
   height: 100%;
   margin: 0 auto;
@@ -268,7 +269,7 @@
 }
 
 /* Responsive display toggle */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }

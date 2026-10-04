@@ -21,9 +21,9 @@ export default function ContactLocation() {
     const mm = gsap.matchMedia();
 
     // ========================================================
-    // DESKTOP ANIMATION TIMELINE (>= 768px, Figma 1440x900)
+    // DESKTOP ANIMATION TIMELINE (>= 1024px, Figma 1440x900)
     // ========================================================
-    mm.add('(min-width: 768px)', () => {
+    mm.add('(min-width: 1024px)', () => {
       gsap.set(
         [
           headingDesktopRef.current,
@@ -61,9 +61,9 @@ export default function ContactLocation() {
     });
 
     // ========================================================
-    // MOBILE ANIMATION TIMELINE (< 768px, Figma 390x844)
+    // MOBILE & TABLET ANIMATION TIMELINE (< 1024px)
     // ========================================================
-    mm.add('(max-width: 767px)', () => {
+    mm.add('(max-width: 1023px)', () => {
       gsap.set(
         [
           headingMobileRef.current,

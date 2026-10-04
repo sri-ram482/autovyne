@@ -69,75 +69,44 @@
   padding: 0;
 }
 
-html, body {
+/* Global Root & Body Architecture: Natural vertical scrolling allowed when content exceeds viewport, horizontal overflow strictly prevented */
+html {
   width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   background-color: var(--bg-base);
   color: #FFFFFF;
   font-family: var(--font-poppins);
   overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Desktop (>= 1024px): Viewport-fitted as approved in Figma */
-@media (min-width: 1024px) {
-  html, body {
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-/* Mobile & Tablet (< 1024px): Document-level natural vertical scrolling allowed, horizontal overflow strictly prevented */
-@media (max-width: 1023px) {
-  html {
-    min-height: 100%;
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  body {
-    min-height: 100vh;
-    min-height: 100dvh;
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-  }
 }
 
 /* Responsive Page Root Container */
 .page-root-container {
   position: relative;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #08090B;
-}
-
-@media (min-width: 1024px) {
-  .page-root-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 @media (max-width: 1023px) {
-  .page-root-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    height: auto;
-    overflow-x: clip;
-    overflow-y: visible;
-  }
-
   /* Route-specific mobile scrollable heights to guarantee complete reachability */
   #autovyne-root {
     min-height: 870px;
@@ -145,7 +114,7 @@ html, body {
   }
 
   #autovyne-fleet-root {
-    min-height: 870px;
+    min-height: 920px;
     padding-bottom: 50px;
   }
 
@@ -160,7 +129,7 @@ html, body {
   }
 
   #autovyne-specs-root {
-    min-height: 890px;
+    min-height: 1000px;
     padding-bottom: 50px;
   }
 

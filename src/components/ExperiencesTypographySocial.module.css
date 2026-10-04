@@ -190,7 +190,7 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
+  max-width: min(540px, 100%);
   min-height: 870px;
   height: 100%;
   margin: 0 auto;
@@ -325,7 +325,7 @@
 }
 
 /* Media queries */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }

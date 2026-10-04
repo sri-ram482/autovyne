@@ -486,7 +486,7 @@ export default function CartItemsLayout() {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 768px)', () => {
+    mm.add('(min-width: 1024px)', () => {
       const tl = gsap.timeline({ delay: 0.15 });
 
       if (boxDesktopRef.current) {
@@ -819,7 +819,7 @@ export default function CartItemsLayout() {
       }
     });
 
-    mm.add('(max-width: 767px)', () => {
+    mm.add('(max-width: 1023px)', () => {
       const tl = gsap.timeline({ delay: 0.1 });
 
       if (viewportMobileRef.current) {

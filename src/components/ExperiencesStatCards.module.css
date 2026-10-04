@@ -176,7 +176,7 @@
   display: none;
   position: relative;
   width: 100%;
-  max-width: 390px;
+  max-width: min(540px, 100%);
   min-height: 870px;
   height: 100%;
   margin: 0 auto;
@@ -186,14 +186,16 @@
 /* Frame 37: x: 25px, top: 367px, w: 333px, gap: 9px */
 .statCardsContainerMobile {
   position: absolute;
-  left: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 367px;
-  width: 333px;
+  width: min(340px, calc(100% - 32px));
   height: 73px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 9px;
+  justify-content: space-between;
+  gap: 8px;
   pointer-events: auto;
 }
 
@@ -303,7 +305,7 @@
 }
 
 /* Media Queries */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .statCardsSection {
     z-index: 8; /* Strictly behind car (z-index: 10) on mobile as requested */
   }

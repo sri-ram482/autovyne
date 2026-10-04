@@ -62,8 +62,8 @@ export default function ExperiencesMobileFooterFeatures() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Only animate on mobile viewports (< 768px)
-    if (typeof window === 'undefined' || window.innerWidth >= 768) return;
+    // Only animate on mobile and tablet viewports (< 1024px)
+    if (typeof window === 'undefined' || window.innerWidth >= 1024) return;
 
     const validItems = itemRefs.current.filter(Boolean) as HTMLDivElement[];
     if (validItems.length === 0) return;

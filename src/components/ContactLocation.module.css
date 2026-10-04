@@ -62,9 +62,10 @@
 
 .locationContainerDesktop {
   position: absolute;
-  left: 790px;
+  right: clamp(24px, 10.5vw, 152px);
+  left: auto;
   top: 617px;
-  width: 498px;
+  width: min(498px, calc(100% - 48px));
   height: auto;
   pointer-events: auto;
   box-sizing: border-box;
@@ -257,9 +258,9 @@
 
 
 /* ========================================================
-   RESPONSIVE SWITCHER (>= 768px vs < 768px)
+   RESPONSIVE SWITCHER (>= 1024px vs < 1024px)
    ======================================================== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktopWrapper {
     display: block;
   }
@@ -268,7 +269,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktopWrapper {
     display: none;
   }

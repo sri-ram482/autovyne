@@ -13,7 +13,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .footerFeaturesContainer {
     display: block;
     position: absolute;
@@ -30,7 +30,7 @@
   .mobileWrapper {
     position: relative;
     width: 100%;
-    max-width: 480px;
+    max-width: min(540px, 100%);
     min-height: 870px;
     height: 100%;
     margin: 0 auto;
